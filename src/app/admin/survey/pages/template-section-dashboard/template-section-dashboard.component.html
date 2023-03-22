@@ -1,0 +1,77 @@
+<div class="flex flex-col flex-auto w-full min-w-0">
+    <div class="flex flex-col flex-auto">
+        <div class="container-fluid" style="min-height: 1000px;">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card" style="margin-top: 20px;">
+                        <div class="card-header">
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    <h2>Survey Section - {{ data?.section?.section_name }}</h2>
+                                </div>
+                                <div class="col-sm-3">
+                                    <button class="btn btn-danger" (click)="showUpload()">Upload Excel</button>
+                                    <button style="margin-left: 20px;" class="btn btn-primary" [routerLink]="['/preview-section',data.section.template_id, data.formData.section_id]">Preview Section</button>
+                                    <button style="margin-left: 20px;" class="btn btn-secondary" [routerLink]="['/template-dashboard',data.section.template_id]">Go Back</button>
+                                </div>
+                            </div>  
+                        </div>
+                        <div class="card-body">
+                            <div class="row" *ngIf="uploading=='Y'">
+                                <div class="col-sm-4">
+                                    <div  class="card card-body">
+                                        <h2 style="font-size: 24px;"><b>Select File to Upload</b></h2>
+                                        <div class="row">
+                                            <div class="col-xl-4"> &nbsp; </div>            
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xl-4">Note/Description</div>
+                                            <div class="col-xl-8">
+                                            <input type="text" class="form-control" [(ngModel)]="dsc" name="dsc" id="dsc">
+                                        </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xl-4"> &nbsp; </div>            
+                                        </div> 
+                                        <div class="mc">
+                                            <input [formControl]="file" (change)="fileChange(index,$event)" type="file" placeholder="File">
+                                            <br>
+                                            <button style="margin-top:20px" (click)="showUpload()" mat-raised-button color="default">
+                                                Cancel
+                                            </button>
+                                            <button style="margin-top:20px; margin-left:20px;" (click)="uploadFile()" mat-raised-button color="primary">
+                                                Upload
+                                            </button>
+                                        </div> 
+                                    </div> 
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12" style="background-color: lightgray;" style="padding: 10px;">
+                                    <button (click)="toggleAdd()" class="btn btn-primary" style="margin-right:10px;">Add Base Question</button>
+                                </div>
+                            </div>
+                            <div *ngIf="adding=='Y'" class="row">
+                                <app-edit-option-form (posted)="posted($event)" [section_id]="data?.formData?.section_id" [option_id]="'0'" [option_group]="'0'" [parent_id]="'0'"></app-edit-option-form>
+                            </div>
+                            <div *ngIf="addingC=='Y'" class="row">
+                                <app-edit-option-form (posted)="posted($event)" [section_id]="data?.formData?.section_id" [option_id]="'0'" [option_group]="parent" [parent_id]="parent"></app-edit-option-form>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <app-option-display-panel *ngFor="let m of data?.questions" [QUESTION_ID]="m.option_id"></app-option-display-panel>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="relative flex flex-0 items-center justify-start w-full h-14 px-4 md:px-6 z-49 border-t bg-card dark:bg-transparent print:hidden">
+        <span class="font-medium text-secondary">SQLLabs Inc. &copy; 2023</span>
+    </div>
+
+</div>

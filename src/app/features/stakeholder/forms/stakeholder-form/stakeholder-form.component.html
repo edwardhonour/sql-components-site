@@ -1,0 +1,107 @@
+<div class="container-fluid m-3">
+    <div class="row" style="background-color: lightgray;">
+        <div class="col-sm-8 pt-3">
+            <div class="card-title"><h2>Add/Edit Stakeholder / Client</h2></div>
+        </div>
+        <div class="col-sm-4">
+  
+        </div>
+        </div>
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="card" style="margin-top: 20px; margin-bottom: 20px;">
+                <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <form>
+                                    <div class="m-3">
+                                        <label for="org_name" class="form-label">Organization Name</label>
+                                        <input type="org_name" name="org_name" class="form-control" id="org_name" [(ngModel)]="data?.formData.org_name">
+                                    </div>
+                                    <div class="m-3">
+                                        <label for="contact_name" class="form-label">Contact Name</label>
+                                        <input type="contact_name" name="contact_name" class="form-control" id="contact_name" [(ngModel)]="data?.formData.contact_name">
+                                    </div>
+                                    <div class="m-3">
+                                        <label for="contact_email" class="form-label">Contact Email</label>
+                                        <input type="contact_email" name="contact_email" class="form-control" id="contact_email" [(ngModel)]="data?.formData.contact_email">
+                                      </div>
+                                      <div class="m-3">
+                                        <label for="contact_phone" class="form-label">Contact Phone</label>
+                                        <input type="contact_phone" name="contact_phone" class="form-control" id="contact_phone" [(ngModel)]="data?.formData.contact_phone">
+                                      </div>
+                                  </form>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card" style="margin-top: 20px; margin-bottom: 20px;">
+                <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <form>
+                                    <div class="m-3">
+                                        <div class="m-3">
+                                            <label for="address" class="form-label">Address</label>
+                                            <input type="address" name="address" class="form-control" id="address" [(ngModel)]="data?.formData.address">
+                                        </div>
+                                        <div class="m-3">
+                                            <label for="city" class="form-label">City</label>
+                                            <input type="city" name="city" class="form-control" id="city" [(ngModel)]="data?.formData.city">
+                                        </div>
+                                        <div class="m-3">
+                                            <label for="state" class="form-label">State</label>
+                                            <input type="state" name="state" class="form-control" id="state" [(ngModel)]="data?.formData.state">
+                                        </div>
+                                        <div class="m-3">
+                                            <label for="zip" class="form-label">Zip</label>
+                                            <input type="zip" name="zip" class="form-control" id="zip" [(ngModel)]="data?.formData.zip">
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card" style="margin-top: 20px; margin-bottom: 20px;">
+                <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <form>
+                                    <div class="m-3">
+                                        <label for="account_type" class="form-label">Account Type</label>
+                                        <select name="account_type" [(ngModel)]="data?.formData.account_type" class="form-select">
+                                            <option selected>Please select account type</option>
+                                            <option value="Facility Manager">Facility Manager</option>
+                                            <option value="Facility Owner">Facility Owner</option>
+                                            <option value="Government">Government Entitity</option>
+                                            <option value="Tenant">Facility Tenant</option>
+                                          </select>
+                                    </div>
+                                    <div class="m-3">
+                                            <label for="exampleFormControlTextarea1" class="form-label">Description / Notes</label>
+                                            <textarea class="form-control" name="description" [(ngModel)]="data?.formData.description" id="description" rows="4"></textarea>
+                                    </div>
+
+                                  </form>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="background-color: lightgray;">
+        <div class="col-sm-8 pt-3">
+
+        </div>
+        <div class="col-sm-4">
+            <button class="btn btn-primary m-2"  (click)="postUpdate()">Submit</button>
+            <button *ngIf="data?.formData.id!=''&&data?.formData.id!='0'" class="btn btn-danger m-2"  (click)="postDelete()">Delete</button>
+            <button class="btn btn-secondary m-2" (click)="closeForm()">Cancel</button>  
+        </div>
+        </div>
+</div>

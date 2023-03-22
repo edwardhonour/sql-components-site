@@ -1,0 +1,20 @@
+<div class="card">
+<div class="card-header">
+    <h2>Facilities</h2>
+</div>
+<div class="card-body">
+    <div *ngFor="let m of data" class="card p-2 m-2">
+        <div class="card-header">
+          <h3>{{ m.stakeholder_name}}</h3>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">{{ m.facility_name }}</h3>
+          <p>
+            {{ m.address}}<br>
+            {{ m.city }}, {{ m.state }} {{ m.zip }}
+          </p>
+          <a [routerLink]="['/facility-dashboard',m.id]" class="btn btn-primary">Facility Dashbaord</a>
+        </div>
+    </div>
+</div>    
+</div>

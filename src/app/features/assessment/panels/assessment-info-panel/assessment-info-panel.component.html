@@ -1,0 +1,91 @@
+<div class="container-fluid m-2">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card" style="margin-top: 20px; margin-bottom: 20px;">
+                <div class="card-header">
+                    <h2>Assessment Information</h2>
+                </div>
+                <div class="card-body">
+                    <div class="row p-2">
+                        <div class="col-2">
+                            Question Set:
+                        </div>
+                        <div class="col-4">
+                            {{ data?.template.template_name }}
+                        </div>
+                    </div>
+                    <div class="row p-2">
+                        <div class="col-2">
+                            Assessment Id:
+                        </div>
+                        <div class="col-4">
+                            {{ data?.assessment.id }}
+                        </div>
+                        <div class="col-2">
+                            Status:
+                        </div>
+                        <div class="col-4">
+                            {{ data?.assessment.status}}
+                        </div>
+                    </div>
+                    <div class="row p-2">
+                        <div class="col-2">
+                            Facility:
+                        </div>
+                        <div class="col-4">
+                            {{ data?.facility.facility_name }}
+                        </div>
+                        <div class="col-2">
+                            Stakeholder
+                        </div>
+                        <div class="col-4">
+                            {{ data?.stakeholder.org_name }}
+                        </div>
+                    </div>
+                    <div class="row p-2">
+                        <div class="col-2">
+                            
+                        </div>
+                        <div class="col-4">
+                            {{ data?.facility.address }}
+                        </div>
+                        <div class="col-2">
+                            
+                        </div>
+                        <div class="col-4">
+                            {{ data?.stakeholder.contact_name }}
+                        </div>
+                    </div>
+                    <div class="row p-2">
+                        <div class="col-2">
+                            
+                        </div>
+                        <div class="col-4">
+                            {{ data?.facility.city }}, {{ data?.facility.state }} {{ data?.facility.zip }} 
+                        </div>
+                        <div class="col-2">
+                            
+                        </div>
+                        <div class="col-4">
+                            {{ data?.stakeholder.contact_email }}
+                        </div>
+                    </div>
+                    <div class="row p-2">
+                        <div class="col-2">
+                            Due Date:
+                        </div>
+                        <div class="col-4">
+                            {{ data?.assessment.due_date }} 
+                        </div>
+                        <div class="col-2">
+                            
+                        </div>
+                        <div class="col-4">
+                            {{ data?.stakeholder.contact_email }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>    

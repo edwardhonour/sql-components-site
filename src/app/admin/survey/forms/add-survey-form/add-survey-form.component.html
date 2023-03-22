@@ -1,0 +1,86 @@
+<div class="container-fluid m-3">
+    <div class="row" style="background-color: lightgray;">
+      <div class="col-sm-8 pt-3">
+              <h2>Schedule Assessment</h2>
+      </div>
+      <div class="col-sm-4">
+
+      </div>
+      </div>
+    <div class="row">
+    <div class="col-sm-4">
+        <div class="card" style="margin-top:20px;">
+            <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <form>
+                                <div class="m-3">
+                                    <label for="account_type" class="form-label">Select Facility</label>
+                                    <select name="facility_id" [(ngModel)]="data?.formData.facility_id" class="form-select">
+                                        <option selected>Please select facility</option>
+                                        <option value="Facility Manager">Facility Manager</option>
+                                        <option *ngFor="let m of data?.facilities" value="{{ m.id }}">{{ m.facility_name }}</option>
+                                      </select>
+                                </div>
+                                <div class="m-3">
+                                    <label for="template_id" class="form-label">Select Survey Template</label>
+                                    <select name="template_id" [(ngModel)]="data?.formData.template_id" class="form-select">
+                                        <option selected>Please select an Assessment Template</option>
+                                        <option *ngFor="let m of data?.templates" value="{{ m.id }}">{{ m.template_name }}</option>
+                                      </select>
+                                </div>
+                                <div class="m-3">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <mat-form-field class="example-full-width" appearance="fill">
+                                                <mat-label>Due Date</mat-label>
+                                                <input [(ngModel)]="due_date" matInput [matDatepicker]="picker3">
+                                                <mat-hint>MM/DD/YYYY</mat-hint>
+                                                <mat-datepicker #picker3></mat-datepicker>
+                                            </mat-form-field>
+                                            <button class="btn btn-secondary" (click)="picker3.open()">Calendar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="m-3">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <mat-form-field class="example-full-width" appearance="fill">
+                                                <mat-label>Est Start Date</mat-label>
+                                                <input [(ngModel)]="estimated_start_date" matInput [matDatepicker]="picker">
+                                                <mat-hint>MM/DD/YYYY</mat-hint>
+                                                <mat-datepicker #picker></mat-datepicker>
+                                            </mat-form-field>
+                                            <button class="btn btn-secondary" (click)="picker2.open()">Calendar</button>
+                                            </div>
+                                            <div class="col-md-6">
+                                            <mat-form-field class="example-full-width" appearance="fill">
+                                                <mat-label>Est Complete Date</mat-label>
+                                                <input [(ngModel)]="estimated_complete_date" matInput [matDatepicker]="picker2">
+                                                <mat-hint>MM/DD/YYYY</mat-hint>
+                                                <mat-datepicker #picker2></mat-datepicker>
+                                            </mat-form-field>
+                                            <button class="btn btn-secondary" (click)="picker.open()">Calendar</button>
+                                    </div>
+                                </div>
+                                </div>
+                              </form>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4">
+
+    </div>
+</div>
+<div class="row" style="background-color: lightgray;">
+        <div class="col-sm-8">
+
+        </div>
+        <div class="col-sm-4">
+          <button class="btn btn-primary m-2"  (click)="postUpdate()">Submit</button>
+          <button class="btn btn-secondary m-2" (click)="closeForm()">Cancel</button>
+        </div>
+</div>
+</div>

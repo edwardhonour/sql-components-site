@@ -1,0 +1,50 @@
+<div class="container-fluid m-3">
+    <div class="row" style="background-color: lightgray;">
+        <div class="col-sm-8 pt-3">
+            <div class="card-title"><h2>{{ data?.formData.org_name }}</h2></div>
+        </div>
+        <div class="col-sm-4">
+  
+        </div>
+        </div>
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="card" style="margin-top: 20px; margin-bottom: 20px;">
+                <div class="card-body">
+                        <div class="row">
+                                    <ul class="list-group list-group-flush" style="width: 100% !important;;">
+                                      <li class="list-group-item"><b>{{ data?.formData.org_name }}</b></li>
+                                      <li class="list-group-item">{{ data?.formData.contact_name }}</li>
+                                      <li class="list-group-item">{{ data?.formData.address }}</li>
+                                      <li class="list-group-item">{{ data?.formData.city }} {{ data?.formData.state }} {{ data?.formData.zip }}</li>
+                                    </ul>
+                        </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-8">
+            <div class="card" style="margin-top: 20px; margin-bottom: 20px;">
+                <div class="card-body">
+                        <div class="row">
+                                    <ul class="list-group list-group-flush" style="width: 100% !important;">
+                                        <li class="list-group-item"><b>Active Facilities</b></li>
+                                      <li class="list-group-item">
+                                        <div *ngFor="let m of data?.facilities" class="row">
+                                            <div class="col-sm-4 p-3">
+                                                {{ m.facility_name }}
+                                            </div>
+                                            <div class="col-sm-4 p-3">
+                                                {{ m.address }} {{ m.city }} {{ m.state }} {{ m.zip }}
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <button [routerLink]="['/facility-dashboard',m.id]" class="btn btn-secondary m-3">Dashboard</button>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    </ul>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

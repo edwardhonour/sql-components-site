@@ -1,0 +1,97 @@
+<div class="container-fluid m-3">
+    <div class="row" style="background-color: lightgray;">
+      <div class="col-sm-8 pt-3">
+              <h2>Add Facility</h2>
+      </div>
+      <div class="col-sm-4">
+
+      </div>
+      </div>
+    <div class="row">
+    <div class="col-sm-4">
+        <div class="card"  style="margin-top: 20px; margin-bottom: 20px;">
+            <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <form>
+                                <div class="m-3">
+                                    <label for="facility_name" class="form-label">Facility Name</label>
+                                    <input type="facility_name" name="facility_name" class="form-control" id="facility_name" [(ngModel)]="data?.formData.facility_name">
+                                </div>
+                                <div class="m-3">
+                                    <label for="address" class="form-label">Address</label>
+                                    <input type="address" name="address" class="form-control" id="address" [(ngModel)]="data?.formData.address">
+                                </div>
+                                <div class="m-3">
+                                    <label for="city" class="form-label">City</label>
+                                    <input type="city" name="city" class="form-control" id="city" [(ngModel)]="data?.formData.city">
+                                </div>
+                                <div class="m-3">
+                                    <label for="state" class="form-label">State</label>
+                                    <input type="state" name="state" class="form-control" id="state" [(ngModel)]="data?.formData.state">
+                                </div>
+                                <div class="m-3">
+                                    <label for="zip" class="form-label">Zip</label>
+                                    <input type="zip" name="zip" class="form-control" id="zip" [(ngModel)]="data?.formData.zip">
+                                </div>
+                              </form>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="card"  style="margin-top: 20px; margin-bottom: 20px;">
+            <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <form>
+                              <div class="m-3">
+                                <label for="stakeholder_id" class="form-label">Facility Stakeholder (if any)</label>
+                                <select name="stakeholder_id" [(ngModel)]="data?.formData.stakeholder_id" class="form-select">
+                                    <option selected>Please select stakeholder</option>
+                                    <option *ngFor="let m of data?.stakeholders" value="{{ m.id }}">{{ m.org_name }}</option>
+                                  </select>
+                            </div>
+                              <div class="m-3">
+                                <label for="contact_name" class="form-label">Contact Name</label>
+                                <input type="contact_name" name="contact_name" class="form-control" id="contact_name" [(ngModel)]="data?.formData.contact_name">
+                            </div>
+                            <div class="m-3">
+                                <label for="contact_email" class="form-label">Contact Email</label>
+                                <input type="contact_email" name="contact_email" class="form-control" id="contact_email" [(ngModel)]="data?.formData.contact_email">
+                              </div>
+                              <div class="m-3">
+                                <label for="contact_phone" class="form-label">Contact Phone</label>
+                                <input type="contact_phone" name="contact_phone" class="form-control" id="contact_phone" [(ngModel)]="data?.formData.contact_phone">
+                              </div>
+                              </form>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="card"   style="margin-top: 20px; margin-bottom: 20px;">
+        <form>
+          <div class="card-body">
+              <div class="m-3">
+                  <label for="exampleFormControlTextarea1" class="form-label">Description / Notes</label>
+                  <textarea class="form-control" name="description" [(ngModel)]="data?.formData.description" id="description" rows="16">
+                  </textarea>
+            </div>
+          </div>
+        </form>
+              </div>
+      </div>
+      </div>
+      <div class="row" style="background-color: lightgray;">
+        <div class="col-sm-8">
+
+        </div>
+        <div class="col-sm-4">
+          <button class="btn btn-primary m-2"  (click)="postUpdate()">Submit</button>
+          <button class="btn btn-secondary m-2" (click)="closeForm()">Cancel</button>
+        </div>
+        </div>
+    </div>

@@ -1,0 +1,228 @@
+<div class="flex flex-col flex-auto w-full min-w-0">
+    <div class="flex flex-col flex-auto">
+             <div class="container-fluid p-3">
+                <div class="row p-3">
+                    <div class="col-sm-6" style="background-color: white;">
+                            <h1 class="mt-2">{{ data?.formData?.facility_name }}</h1>
+                            <p>{{ data?.formData?.address }}<br>
+                            {{ data?.formData?.city }}, {{ data?.formData?.state }} {{ data?.formData?.zip }}<br>
+                    </div>
+                    <div class="col-sm-6" style="background-color: white;">
+                        <h1 class="mt-2">Stakeholder: {{ data?.formData?.stakeholder_name }}</h1>
+                    </div>
+                </div>
+                <div class="row p-3" style="background-color: lightgrey;">
+                    <div class="col-sm-12 m-1">
+                           <app-top-menu-facility-dashboard></app-top-menu-facility-dashboard>
+                           <app-test-grid-panel></app-test-grid-panel>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 col-xl-3 col-xxl-4">
+                        <div class="container-fluid m-2">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="card" style="margin-top: 20px; margin-bottom: 20px;">
+                                        <div class="card-header">
+                                            <h2>Facility Menu</h2>
+                                        </div>
+                                        <div class="card-body">
+                                                <div class="row">
+                                                    <ul class="list-group list-group-flush" style="width: 100% !important;;">
+                                                    <li *ngIf="showFGD=='N'" (click)="toggleGFD()" class="list-group-item">General Facility Description</li>
+                                                    <li *ngIf="showFGD=='Y'" (click)="toggleGFD()" class="list-group-item active">General Facility Description</li>
+                                                    <li *ngIf="showFT=='N'" (click)="toggleFT()" class="list-group-item">Property Type(s)</li>
+                                                    <li *ngIf="showFT=='Y'" (click)="toggleFT()" class="list-group-item active">Property Type(s)</li>
+                                                    <li *ngIf="showSAA=='N'" (click)="toggleSAA()" class="list-group-item">Significant Areas & Assets</li>
+                                                    <li *ngIf="showSAA=='Y'"  (click)="toggleSAA()" class="list-group-item active">Significant Areas & Assets</li>
+                                                    <li *ngIf="showOV=='N'" (click)="toggleOV()" class="list-group-item">Facility Threat Background</li>
+                                                    <li *ngIf="showOV=='Y'" (click)="toggleOV()" class="list-group-item active">Facility Threat Backgruond</li>
+                                                    <li *ngIf="showFSB=='N'" (click)="toggleFSB()" class="list-group-item">Facility Security Background</li>
+                                                    <li *ngIf="showFSB=='Y'"  (click)="toggleFSB()" class="list-group-item active">Facility Security Background</li>
+                                                    <li *ngIf="showTenants=='N'" (click)="toggleTenants()" class="list-group-item">Facility Tenants</li>
+                                                    <li *ngIf="showTenants=='Y'"  (click)="toggleTenants()" class="list-group-item active">Facility Tenants</li>
+                                                    <li *ngIf="showThreat=='N'" (click)="toggleThreat()" class="list-group-item">Threat Profile</li>
+                                                    <li *ngIf="showThreat=='Y'"  (click)="toggleThreat()" class="list-group-item active">Threat Profile</li>
+                                                    <li *ngIf="showHistory=='N'" (click)="toggleHistory()" class="list-group-item">Assessment History</li>
+                                                    <li *ngIf="showHistory=='Y'"  (click)="toggleHistory()" class="list-group-item active">Assessment History
+                                                    <li *ngIf="showRecommended=='N'" (click)="toggleRecommended()" class="list-group-item">Recommended Countermeasures</li>
+                                                    <li *ngIf="showRecommended=='Y'"  (click)="toggleRecommended()" class="list-group-item active">Recommended Countermeasures</li>
+                                                    <li *ngIf="showDegraded=='N'" (click)="toggleDegraded()" class="list-group-item">Degraded Countermeasures</li>
+                                                    <li *ngIf="showDegraded=='Y'"  (click)="toggleDegraded()" class="list-group-item active">Degraded Countermeasures</li>
+                                                    <li *ngIf="showEC=='N'" (click)="toggleEC()" class="list-group-item">Entry Controls</li>
+                                                    <li *ngIf="showEC=='Y'"  (click)="toggleEC()" class="list-group-item active">Entry Controls</li>
+                                                    <li *ngIf="showBE=='N'" (click)="toggleBE()" class="list-group-item">Building Envelope</li>
+                                                    <li *ngIf="showBE=='Y'"  (click)="toggleBE()" class="list-group-item active">Building Envelope</li>
+                                                    <li *ngIf="showESS=='N'" (click)="toggleESS()" class="list-group-item">Electronic Security Systems</li>
+                                                    <li *ngIf="showESS=='Y'"  (click)="toggleESS()" class="list-group-item active">Electronic Security Systems</li>
+                                                    <li *ngIf="showParking=='N'" (click)="toggleParking()" class="list-group-item">Parking</li>
+                                                    <li *ngIf="showParking=='Y'"  (click)="toggleParking()" class="list-group-item active">Parking</li>
+                                                    <li *ngIf="showBarriers=='N'" (click)="toggleBarriers()" class="list-group-item">Barriers</li>
+                                                    <li *ngIf="showBarriers=='Y'"  (click)="toggleBarriers()" class="list-group-item active">Barriers</li>
+                                                    <li *ngIf="showIllumination=='N'" (click)="toggleIllumination()" class="list-group-item">Illumination</li>
+                                                    <li *ngIf="showIllumination=='Y'"  (click)="toggleIllumination()" class="list-group-item active">Illumination</li>
+                                                    <li *ngIf="showUD=='N'" (click)="toggleUD()" class="list-group-item">Utility Dependencies</li>
+                                                    <li *ngIf="showUD=='Y'"  (click)="toggleUD()" class="list-group-item active">Utility Dependencies</li>
+                                                    <li *ngIf="showPhotos=='N'" (click)="togglePhotos()" class="list-group-item">Photos</li>
+                                                    <li *ngIf="showPhotos=='Y'"  (click)="togglePhotos()" class="list-group-item active">Photos</li>
+                                                    <li *ngIf="showDocs=='N'" (click)="toggleDocs()" class="list-group-item">Documents</li>
+                                                    <li *ngIf="showDocs=='Y'"  (click)="toggleDocs()" class="list-group-item active">Documents</li>
+                                                    <li *ngIf="showCrimeStats=='N'" (click)="toggleCrimeStats()" class="list-group-item">Crime Statistics</li>
+                                                    <li *ngIf="showCrimeStats=='Y'"  (click)="toggleCrimeStats()" class="list-group-item active">Crime Statistics</li>
+                                                    <li *ngIf="showContacts=='N'" (click)="toggleContacts()" class="list-group-item">Emergency Contacts</li>
+                                                    <li *ngIf="showContacts=='Y'"  (click)="toggleContacts()" class="list-group-item active">Emergency Contacts</li>
+                                                    <li *ngIf="showTests=='N'" (click)="toggleTests()" class="list-group-item">Functionality Tests</li>
+                                                    <li *ngIf="showTests=='Y'"  (click)="toggleTests()" class="list-group-item active">Functionality Tests</li>
+                                                    <li *ngIf="showNotes=='N'" (click)="toggleNotes()" class="list-group-item">Facility Notes</li>
+                                                    <li *ngIf="showNotes=='Y'" (click)="toggleNotes()" class="list-group-item active">Facility Notes</li>
+                                                    <li *ngIf="showLog=='N'" (click)="toggleLog()" class="list-group-item">Facility Change Log</li>
+                                                    <li *ngIf="showLog=='Y'" (click)="toggleLog()" class="list-group-item active">Facility Change Log</li>
+                                                    </ul>
+                                                </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-xl-9 col-xxl-8">
+                        <div class="row">
+                            </div>
+                            <div class="row">
+                                <div *ngIf="showFT=='Y'"  class="col-sm-12 col-xxl-12">
+                                    <app-facility-property-types [facility_id]="data?.formData?.id"></app-facility-property-types>
+                            </div>
+                            </div>
+                            <div class="row">
+                                <div *ngIf="showOV=='Y'"  class="col-sm-12 col-xxl-12">
+                                    <app-facility-overview [facility_id]="data?.formData?.id"></app-facility-overview> 
+                            </div>
+                            </div>
+                        <div class="row">
+                            <div *ngIf="showNotes=='Y'"  class="col-sm-12 col-xxl-12">
+                                <app-facility-notes-panel [facility_id]="data?.formData?.id"></app-facility-notes-panel>
+                            </div>
+                        </div>
+                        <div [hidden]="showFGD=='N'" class="row">
+                            <div class="col-12">
+                                <app-facility-general-info-panel [facility_id]="data?.formData?.id"></app-facility-general-info-panel>
+                            </div>
+                        </div>
+                        <div *ngIf="showIncidents=='Y'" class="row">
+                            <div class="col-12">
+                                <app-facility-incident-panel [facility_id]="data?.formData?.id"></app-facility-incident-panel>
+                            </div>
+                        </div>
+                        <div *ngIf="showTenants=='Y'" class="row">
+                            <div class="col-12">
+                                <app-facility-tenant-panel [facility_id]="data?.formData?.id"></app-facility-tenant-panel>
+                            </div>
+                        </div>
+                        <div *ngIf="showAssets=='Y'" class="row">
+                            <div class="col-12">
+                                <app-facility-assets-panel [facility_id]="data?.formData?.id"></app-facility-assets-panel>
+                            </div>
+                        </div>
+                        <div *ngIf="showContacts=='Y'" class="row">
+                            <div class="col-12">
+                                <app-facility-contacts-panel [facility_id]="data?.formData?.id"></app-facility-contacts-panel>
+                            </div>
+                        </div>
+                        <div *ngIf="showFSB=='Y'" class="row">
+                            <div class="col-12">
+                                <app-facility-fsb-panel [facility_id]="data?.formData?.id"></app-facility-fsb-panel>
+                            </div>
+                        </div>
+                        <div *ngIf="showIncidents=='Y'" class="row">
+                            <div class="col-12">
+                                <app-facility-incident-panel [facility_id]="data?.formData?.id"></app-facility-incident-panel>
+                            </div>
+                        </div>
+                        <div *ngIf="showSAA=='Y'" class="row">
+                            <div class="col-12">
+                                <app-facility-saa-panel [facility_id]="data?.formData?.id"></app-facility-saa-panel>
+                            </div>
+                        </div>
+                        <div *ngIf="showHistory=='Y'" class="row">
+                            <div class="col-12">
+                                <app-facility-history-panel [facility_id]="data?.formData?.id"></app-facility-history-panel>
+                            </div>
+                        </div>
+                        <div *ngIf="showRecommended=='Y'" class="row">
+                            <div class="col-12">
+                                <app-facility-recommended-panel [facility_id]="data?.formData?.id"></app-facility-recommended-panel>
+                            </div>
+                        </div>
+                        <div *ngIf="showDegraded=='Y'" class="row">
+                            <div class="col-12">
+                                <app-facility-degraded-panel [facility_id]="data?.formData?.id"></app-facility-degraded-panel>
+                            </div>
+                        </div>
+                        <div *ngIf="showBarriers=='Y'" class="row">
+                            <div class="col-12">
+                                <app-facility-barriers-panel [facility_id]="data?.formData?.id"></app-facility-barriers-panel>
+                            </div>
+                        </div>
+                        <div *ngIf="showBE=='Y'" class="row">
+                            <div class="col-12">
+                                <app-facility-building-envelope-panel [facility_id]="data?.formData?.id"></app-facility-building-envelope-panel>
+                            </div>
+                        </div>
+                        <div *ngIf="showCrimeStats=='Y'" class="row">
+                            <div class="col-12">
+                                <app-facility-crime-stats-panel [facility_id]="data?.formData?.id"></app-facility-crime-stats-panel>
+                            </div>
+                        </div>
+                        <div *ngIf="showEC=='Y'" class="row">
+                            <div class="col-12">
+                                <app-facility-entry-controls-panel [facility_id]="data?.formData?.id"></app-facility-entry-controls-panel>
+                            </div>
+                        </div>
+                        <div *ngIf="showESS=='Y'" class="row">
+                            <div class="col-12">
+                                <app-facility-ess-panel [facility_id]="data?.formData?.id"></app-facility-ess-panel>
+                            </div>
+                        </div>
+                        <div *ngIf="showIllumination=='Y'" class="row">
+                            <div class="col-12">
+                                <app-facility-illumination-panel [facility_id]="data?.formData?.id"></app-facility-illumination-panel>
+                            </div>
+                        </div>
+                        <div *ngIf="showLog=='Y'" class="row">
+                            <div class="col-12">
+                                <app-facility-log-panel [facility_id]="data?.formData?.id"></app-facility-log-panel>
+                            </div>
+                        </div>
+                        <div *ngIf="showParking=='Y'" class="row">
+                            <div class="col-12">
+                                <app-facility-parking-panel [facility_id]="data?.formData?.id"></app-facility-parking-panel>
+                            </div>
+                        </div>
+                        <div *ngIf="showPhotos=='Y'" class="row">
+                            <div class="col-12">
+                                <app-facility-photos-panel [facility_id]="data?.formData?.id"></app-facility-photos-panel> 
+                            </div>
+                        </div>
+                        <div *ngIf="showThreat=='Y'" class="row">
+                            <div class="col-12">
+                                <app-facility-threat-panel [facility_id]="data?.formData?.id"></app-facility-threat-panel> 
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-xxl-12">
+                            <app-facility-assessment-panel [facility_id]="data?.formData?.id"></app-facility-assessment-panel>
+                        </div>
+                        <div *ngIf="showMap=='Y'" class="row">
+                            <div class="col-12">
+                                <app-facility-map-panel [facility_id]="data?.formData?.id"></app-facility-map-panel>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>          
+    </div>    
+    <div class="relative flex flex-0 items-center justify-start w-full h-14 px-4 md:px-6 z-49 border-t bg-card dark:bg-transparent print:hidden">
+        <span class="font-medium text-secondary">SQLLabs Inc. &copy; 2023</span>
+    </div>
+
+</div>

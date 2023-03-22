@@ -1,0 +1,64 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="d-none d-lg-block col-lg-12 p-4" style="background-color: lightgrey;">
+            <button *ngIf="AS=='Y'" (click)="toggleStakeholder(0)" class="btn btn-primary">Add Stakeholder</button>
+            <button *ngIf="AF=='Y'" (click)="toggleFacility(0)" class="btn btn-primary"  style="margin-left: 20px;">Add Facility</button>
+            <button *ngIf="AF=='Y'" (click)="toggleAssessment(0)" class="btn btn-primary" style="margin-left: 20px;">Schedule Assessment</button>
+            <button *ngIf="PQ=='Y'" [routerLink]="['/preview-list']" class="btn btn-primary" style="margin-left: 20px;">Preview Question Set</button>
+            <button *ngIf="PQ=='Y'" [routerLink]="['/preview-list']" class="btn btn-primary" style="margin-left: 20px;">Invite Stakeholder User</button>
+        </div>
+        <div class="d-none d-md-block d-lg-none col-sm-12 p-4" style="background-color: lightgrey;">
+            <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingOne">
+                    <button (click)="toggleMenu();" class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      Content Menu - Click to Open
+                    </button>
+                  </h2>
+                  <div *ngIf="toggle_open=='Y'" class="accordion accordion-flush" id="accordionFlushExample">
+                    <div class="accordion-body">
+                        <div class="row p-3">
+                            <div class="col-sm-6"><button class="btn btn-secondary" style="width:100%">Add Stakeholder</button></div>
+                            <div class="col-sm-6"><button class="btn btn-secondary" style="width:100%">Add Facility</button></div>
+                        </div>
+                        <div class="row p-3">
+                            <div class="col-sm-6"><button class="btn btn-secondary" style="width:100%">Schedule Assessment</button></div>
+                            <div class="col-sm-6"><button class="btn btn-secondary" style="width:100%">Preview Survey</button></div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="d-sm-block d-md-none col-sm-12 p-4" style="background-color: lightgrey;">
+            <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingOne">
+                    <button (click)="toggleMenu();" class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      Content Menu - Click to Open
+                    </button>
+                  </h2>
+                  <div *ngIf="toggle_open=='Y'" class="accordion accordion-flush" id="accordionFlushExample">
+                    <div class="accordion-body">
+                        <div class="row p-3">
+                                <div class="col-sm-6"><button class="btn btn-secondary" style="width:100%">Add Stakeholder</button></div>
+                        </div>
+                        <div class="row p-3">
+                            <div class="col-sm-6"><button class="btn btn-secondary" style="width:100%">Add Facility</button></div>
+                        </div>
+                        <div class="row p-3">
+                            <div class="col-sm-6"><button class="btn btn-secondary" style="width:100%">Schedule Assessment</button></div>
+                        </div>
+                        <div class="row p-3">
+                            <div class="col-sm-6"><button class="btn btn-secondary" style="width:100%">Preview Survey</button></div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <app-facility-form (posted)="closeFacilityForm()" [facility_id]="facility_id" [stakeholder_id]="stakeholder_id"  *ngIf="facilityShowing=='Y'"></app-facility-form>
+        <app-stakeholder-form (posted)="closeStakeholderForm()" [stakeholder_id]="stakeholder_id" *ngIf="stakeholderShowing=='Y'"></app-stakeholder-form>
+        <app-add-survey-form (posted)="closeAssessmentForm()" [assessment_id]="assessment_id" *ngIf="assessmentShowing=='Y'"></app-add-survey-form>
+    </div>
+</div>

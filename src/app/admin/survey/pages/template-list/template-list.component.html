@@ -1,0 +1,213 @@
+<div class="flex flex-col flex-auto w-full min-w-0">
+
+
+    <div class="flex flex-col flex-auto">
+        <div class="container-fluid" style="background-color:aliceblue; min-height: 1000px;">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card" style="margin-top: 20px;">
+                        <div class="card-header">
+                        <h2>Survey Templates</h2>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-sm-12" style="background-color: lightgray;" style="padding: 10px;">
+                                    <button (click)="toggleAdd();" class="btn btn-primary" style="margin-right:10px;">Add Template</button>
+                                </div>
+                            </div>
+                            <div *ngIf="adding=='Y'" class="row">
+                                <div class="col-sm-12" style="background-color: lightgray;" style="padding: 10px;">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            Add Template
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="row p-2">
+                                                <div class="col-sm-2">Template Name:</div>
+                                                <div class="col-sm-5"><input type="text" class="form-control" name="anything" [(ngModel)]="data.formData['template_name']"></div>
+                                            </div>
+                                            <div class="row p-2">
+                                                <div class="col-sm-2">Template Type:</div>
+                                                <div class="col-sm-5">
+                                                    <select name="anything" [(ngModel)]="data.formData['template_type']" class="form-select">
+                                                        <option value="Facility Backgroup">Facility Background</option>
+                                                        <option value="Entire Facility">Entire Facility</option>
+                                                        <option value="Campus Building">Building within a Campus</option>
+                                                        <option value="Significant Area">Significant Area within Facility</option>
+                                                        <option value="Significant Asset">Significant Asset</option>
+                                                    </select>  
+                                                </div>
+                                            </div>
+                                            <div class="row p-2">
+                                                <div class="col-sm-2">Visibility:</div>
+                                                <div class="col-sm-5">
+                                                    <select name="anything" [(ngModel)]="data.formData['visibility']" class="form-select">
+                                                        <option value="Public">Public</option>
+                                                        <option value="Private">Private</option>
+                                                        <option value="Sector">Sector Only</option>
+                                                    </select>  
+                                                </div>
+                                            </div>
+                                            <div class="row p-2">
+                                                <div class="col-sm-2">Sector:</div>
+                                                <div class="col-sm-5">
+                                                    <select name="anything" [(ngModel)]="data.formData['sector']" class="form-select">
+                                                        <option value="General">General</option>
+                                                        <option value="Airport/Aircraft Hanger">Airport/Aircraft Hanger</option>
+                                                        <option value="Antenna Site">Antenna Site</option>
+                                                        <option value="Child Care Center">Child Care Center</option>
+                                                        <option value="Construction Site">Construction Site</option>
+                                                        <option value="Facility Maintenance Facility">Facility Maintenance Facility</option>
+                                                        <option value="Greenhouse">Greenhouse</option>
+                                                        <option value="Hospital">Hospital</option>
+                                                        <option value="Inspection/Screening Station">Inspection/Screening Station</option>
+                                                        <option value="Laboratory">Laboratory</option>
+                                                        <option value="Law Enforcement">Law Enforcement</option>
+                                                        <option value="Manufacturing Facility - Hazardous Materials">Manufacturing Facility - Hazardous Materials</option>
+                                                        <option value="Manufacturing Facility - Not Hazardous">Manufacturing Facility - Not Hazardous</option>
+                                                        <option value="Multi-tenant Commercial Office">Multi-tenant Commercial Office</option>
+                                                        <option value="Multi-tenant Government Building">Multi-tenant Government Building</option>
+                                                        <option value="Open Parking Lot">Open Parking Lot</option>
+                                                        <option value="Other">Other</option>
+                                                        <option value="Parking Garage">Parking Garage</option>
+                                                        <option value="Parking Spaces">Parking Spaces</option>
+                                                        <option value="Port of Entry">Port of Entry</option>
+                                                        <option value="Power Plant">Power Plant</option>
+                                                        <option value="Pump House (Steam)">Pump House (Steam)</option>
+                                                        <option value="Pump House (Water)">Pump House (Water)</option>
+                                                        <option value="Residential Facility">Residential Facility</option>
+                                                        <option value="Single Tenant Commercial Office Building">Single Tenant Commercial Office Building</option>
+                                                        <option value="Single Tenant Government Office Building">Single Tenant Government Office Building</option>
+                                                        <option value="Unoccupied Facility">Unoccupied Facility</option>
+                                                        <option value="Vehicle Maintenance Facility">Vehicle Maintenance Facility</option>
+                                                        <option value="Commercial Office">Commercial Office</option>
+                                                        <option value="Construction Site">Construction Site</option>
+                                                        <option value="State/Municipal Office">State/Municipal Office</option>
+                                                        <option value="Manufacturing">Manufacturing</option>
+                                                        <option value="Warehouse">Warehouse</option>
+                                                        <option value="Transportation">Transportation</option>
+                                                        <option value="Utilities">Utilities</option>
+                                                        <option value="Education">Education</option>
+                                                        <option value="Retail">Retail</option>
+                                                        <option value="Retail Entertainment">Retail Entertainment</option>
+                                                        <option value="Retail Food Service">Retail Food Service</option>
+                                                        <option value="Retail Pharmacy">Retail Pharmacy</option>
+                                                        <option value="Retail Dispensery">Retail Dispensery</option>
+                                                        <option value="Sports Venue">Sports Venue</option>
+                                                        <option value="Law Enforcement">Law Enforcement</option>
+                                                        <option value="Hosptiality">Hospitality (including hotels)</option>
+                                                        <option value="Financial Institution">Financial Institution</option>
+                                                    </select>  
+                                                </div>
+                                            </div>
+                                            <div *ngIf="data.formData['template_type']=='Significant Asset'" class="row p-2">
+                                                <div class="col-sm-2">Asset Type:</div>
+                                                <div class="col-sm-5">
+                                                    <select name="anything" [(ngModel)]="data.formData['asset_type']" class="form-select">
+                                                        <option value="barriers">Barriers</option>
+                                                        <option value="vss">Video Surveillance System</option>
+                                                        <option value="ids">Intrusion Detection (Alarm) System</option>
+                                                        <option value="locks">Locks and Technology</option>
+                                                        <option value="mag">Magnetometer</option>
+                                                        <option value="xray">X-Ray</option>
+                                                    </select>  
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-2"></div>
+                                                <div class="col-sm-5"><button (click)="postTemplate();" mat-raised-button color="primary" style="margin-top:20px; margin-right:10px;">Save</button>
+                                                <button (click)="toggleAdd();" mat-raised-button style="margin-right:10px;" style="margin-top:20px; margin-left:10px;">Cancel</button></div>
+                                            </div>                                    
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    Sector: <select style="max-width:220px;" class="form-select form-control" [(ngModel)]="term">
+                                        <option value="General">General - All facilities</option>
+                                        <option value="Airport/Aircraft Hanger">Airport/Aircraft Hanger</option>
+                                        <option value="Antenna Site">Antenna Site</option>
+                                        <option value="Child Care Center">Child Care Center</option>
+                                        <option value="Construction Site">Construction Site</option>
+                                        <option value="Facility Maintenance Facility">Facility Maintenance Facility</option>
+                                        <option value="Greenhouse">Greenhouse</option>
+                                        <option value="Hospital">Hospital</option>
+                                        <option value="Inspection/Screening Station">Inspection/Screening Station</option>
+                                        <option value="Laboratory">Laboratory</option>
+                                        <option value="Law Enforcement">Law Enforcement</option>
+                                        <option value="Manufacturing Facility - Hazardous Materials">Manufacturing Facility - Hazardous Materials</option>
+                                        <option value="Manufacturing Facility - Not Hazardous">Manufacturing Facility - Not Hazardous</option>
+                                        <option value="Multi-tenant Commercial Office">Multi-tenant Commercial Office</option>
+                                        <option value="Multi-tenant Government Building">Multi-tenant Government Building</option>
+                                        <option value="Open Parking Lot">Open Parking Lot</option>
+                                        <option value="Other">Other</option>
+                                        <option value="Parking Garage">Parking Garage</option>
+                                        <option value="Parking Spaces">Parking Spaces</option>
+                                        <option value="Port of Entry">Port of Entry</option>
+                                        <option value="Power Plant">Power Plant</option>
+                                        <option value="Pump House (Steam)">Pump House (Steam)</option>
+                                        <option value="Pump House (Water)">Pump House (Water)</option>
+                                        <option value="Residential Facility">Residential Facility</option>
+                                        <option value="Single Tenant Commercial Office Building">Single Tenant Commercial Office Building</option>
+                                        <option value="Single Tenant Government Office Building">Single Tenant Government Office Building</option>
+                                        <option value="Unoccupied Facility">Unoccupied Facility</option>
+                                        <option value="Vehicle Maintenance Facility">Vehicle Maintenance Facility</option>
+                                    </select>
+                                </div>
+                             </div>       
+                             <div class="row">
+                                <div class="col-sm-12">
+                                        <table class="table table-striped table-condensed">
+                                        <thead>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Template Type</th>
+                                                <th>Template Name</th>
+                                                <th>Asset Type</th>
+                                                <th>Sector</th>
+                                                <th>Visibility</th>
+                                                <th style="width: 190px;"></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr *ngFor="let m of data?.list | filter: term ">
+                                                <td>
+                                                  {{ m.id }}
+                                                </td>
+                                                <td>
+                                                    {{ m.template_type }}
+                                                </td>
+                                                <td>
+                                                    {{ m.template_name }}
+                                                </td>
+                                                <td>
+                                                    {{ m.asset_type }}
+                                                </td>
+                                                <td>
+                                                    {{ m.sector }}
+                                                </td>
+                                                <td>
+                                                    {{ m.visibility }}
+                                                </td>
+                                                <td style="max-width: 190px;">
+                                                    <button [routerLink]="['/template-dashboard',m.id]" class="btn btn-primary">Dashboard</button> 
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>  
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="relative flex flex-0 items-center justify-start w-full h-14 px-4 md:px-6 z-49 border-t bg-card dark:bg-transparent print:hidden">
+        <span class="font-medium text-secondary">SQLLabs Inc. &copy; 2023</span>
+    </div>
+
+</div>

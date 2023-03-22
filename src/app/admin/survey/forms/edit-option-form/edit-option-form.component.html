@@ -1,0 +1,75 @@
+<div class="row">
+    <div class="col-sm-6" style="font-size:9px;">edit-option-form</div>
+</div>
+<div class="row">
+    <div class="col-sm-12" style="background-color: lightgray;" style="padding: 10px;">
+        <div class="card">
+            <div class="card-header">
+                Add/Edit Option-Question
+            </div>
+            <div class="card-body">
+                <div class="row mt-2 mb-2" style="background-color: lightgrey; padding:20px;">
+                    <div class="col-sm-2">Section: {{ section_id }}</div>
+                    <div class="col-sm-2">Parent: {{ parent_id }}</div>
+                    <div class="col-sm-2">Option: {{ option_id }}</div>
+                    <div class="col-sm-2">Group: {{ option_group }}</div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-sm-2">Question Text:</div>
+                    <div class="col-sm-10"><input type="text" class="form-control" name="anything" [(ngModel)]="data?.formData.option_text"></div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-sm-2">Location:</div>
+                    <div class="col-sm-5">
+                        <select class="form-control" name="anything2" [(ngModel)]="data?.formData.option_type">
+                            <option *ngFor="let m of data?.location_options" [value]="m.value">
+                                {{ m.name }}
+                            </option>
+                        </select>
+                    </div>
+                </div> 
+                <div class="row mt-2">
+                    <div class="col-sm-2">Option Type:</div>
+                    <div class="col-sm-2">
+                        <select class="form-control" name="anything3" [(ngModel)]="data?.formData.option_type">
+                            <option *ngFor="let m of data?.type_options" [value]="m.value">
+                                {{ m.text }}
+                            </option>                                                                                 
+                        </select>
+                    </div>
+                </div>  
+                <div *ngIf="data?.formData.OPTION_TYPE=='Textarea'" class="row mt-2">
+                    <div class="col-sm-2">Height:</div>
+                    <div class="col-sm-2">
+                        <input type="text" class="form-control" name="anything3" [(ngModel)]="data?.formData.height">
+                    </div>
+                </div> 
+                <div *ngIf="data?.formData.OPTION_TYPE=='Textarea'||data?.formData.OPTION_TYPE=='Text'" class="row mt-2">
+                    <div class="col-sm-2">Width:</div>
+                    <div class="col-sm-2">
+                        <input type="text" class="form-control" name="anything3" [(ngModel)]="data?.formData.width">
+                    </div>
+                </div> 
+                <div class="row mt-2">
+                    <div class="col-sm-2">Third Person Text:</div>
+                    <div class="col-sm-10"><textarea style="height:100px;" class="form-control" name="anything" [(ngModel)]="data?.formData.third_person_text"></textarea></div>
+                </div> 
+                <div class="row mt-2">
+                    <div class="col-sm-2">Help Text:</div>
+                    <div class="col-sm-10"><textarea style="height:100px;" class="form-control" name="anything" [(ngModel)]="data?.formData.help_text"></textarea></div>
+                </div>  
+                <div class="row mt-2">
+                    <div class="col-sm-2">Validation Error Text:</div>
+                    <div class="col-sm-10"><textarea style="height:100px;" class="form-control" name="anything" [(ngModel)]="data?.formData.validation_text"></textarea></div>
+                </div>                                                                                                    
+                <div class="row">
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-5">
+                        <button (click)="postUpdate();" class="btn btn-primary" style="margin-top:20px; margin-right:10px;">Save</button>
+                        <button (click)="postDelete();" class="btn btn-danger" style="margin-top:20px; margin-right:10px;">Delete</button>
+                        <button (click)="closeForm();" class="btn btn-secondary" style="margin-top:20px; margin-right:10px;">Close</button>
+                </div>                                    
+            </div>
+        </div>
+    </div>
+</div>

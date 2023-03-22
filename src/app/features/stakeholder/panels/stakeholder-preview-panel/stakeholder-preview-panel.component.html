@@ -1,0 +1,32 @@
+<div class="container-fluid m-3">
+    <div class="row">
+        <div class="col-sm-12">
+            <div *ngIf="data?.formData.org_name!==undefined" class="card">
+                <div class="card-header">
+                    <div class="card-title"><h2>{{ data?.formData.org_name }}</h2></div>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="class=col-md-12">
+                            <ul class="list-group list-group-flush" style="width: 100% !important;;">
+                                <li class="list-group-item"><b>{{ data?.formData.org_name }}</b></li>
+                                <li class="list-group-item">{{ data?.formData.contact_name }}</li>
+                                <li class="list-group-item">{{ data?.formData.address }}</li>
+                                <li class="list-group-item">{{ data?.formData.city }} {{ data?.formData.state }} {{ data?.formData.zip }}</li>
+                              </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="data?.formData.org_name===undefined" class="card">
+                <div class="card-header">
+                    <div class="card-title"><h2>Click a Stakeholder to Preview</h2></div>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

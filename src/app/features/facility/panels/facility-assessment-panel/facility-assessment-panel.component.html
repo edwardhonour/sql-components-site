@@ -1,0 +1,36 @@
+<span class="font-size:10px;">app-facility-assessment-panel</span>
+<div class="container-fluid m-2">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card" style="margin-top: 20px; margin-bottom: 20px;">
+                <div class="card-header">
+                    <div class="card-title"><h2>Active Assessments</h2></div>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="class=col-md-12">
+                            <table class="table table-condensed">
+                                <thead>
+                                    <tr>
+                                        <th>Assessment</th>
+                                        <th>Status</th>
+                                        <th>Due Date</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let m of data?.list">
+                                        <td>{{ m.template_name }}</td>
+                                        <td>{{ m.status }}</td>
+                                        <td>{{ m.due_date }}</td>
+                                        <td><button class="btn btn-primary">View</button>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

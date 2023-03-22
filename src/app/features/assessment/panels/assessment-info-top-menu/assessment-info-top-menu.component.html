@@ -1,0 +1,110 @@
+<div class="container-fluid">
+    <div class="row">
+        <!-- XL iPad -->
+        <div class="d-none d-xl-block d-xxl-none col-xl-12 p-4" style="background-color: lightgrey;">
+            <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingOne">
+                    <button (click)="toggleMenu();" class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      Assessment Menu
+                    </button>
+                  </h2>
+                  <div *ngIf="toggle_open=='Y'" class="accordion accordion-flush" id="accordionFlushExample">
+                    <div class="accordion-body">
+                        <div class="row p-3">
+                            <div class="col-xl-3">
+                                <button (click)="toggleAssessment(0)" class="btn btn-primary" style="margin-left: 20px; width:100%">Upload Documents</button>
+                            </div>
+                            <div class="col-xl-3">
+                                <button *ngIf="AF=='Y'" (click)="toggleSAA(0)" class="btn btn-primary" style="margin-left: 20px; width:100%">Upload Photos</button>
+                            </div>
+
+                            <div class="col-xl-3">
+                                <button *ngIf="AF=='Y'" (click)="toggleAsset(0)" class="btn btn-primary" style="margin-left: 20px; width:100%">Add Security Equipment</button>
+                            </div>
+                            </div>
+                            <div class="row p-3">
+
+                            <div class="col-xl-3">
+                                <button *ngIf="AF=='Y'" (click)="toggleAssessment(0)" class="btn btn-success" style="margin-left: 20px; width:100%">Goto Facility</button>
+                            </div>
+                            </div>
+            </div>
+        </div>  
+        </div>      
+        </div>
+        </div>
+        <div class="d-none d-xxl-block col-xl-12 p-4" style="background-color: lightgrey;">
+            <button *ngIf="AF=='Y'" (click)="toggleAssessment(0)" class="btn btn-success" style="margin-left: 20px;">Upload Documents</button>
+            <button *ngIf="AF=='Y'" (click)="toggleSAA(0)" class="btn btn-primary" style="margin-left: 20px;">Upload Photos</button>
+            <button *ngIf="AF=='Y'" (click)="toggleAsset(0)" class="btn btn-primary" style="margin-left: 20px;">Add Security Equipment</button>
+            <button *ngIf="AF=='Y'" (click)="toggleAssessment(0)" class="btn btn-success" style="margin-left: 20px;">Goto Facility</button>
+        </div>
+        <div class="d-sm-block d-xl-none col-sm-12 p-4" style="background-color: lightgrey;">
+            <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingOne">
+                    <button (click)="toggleMenu();" class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      Content Menu
+                    </button>
+                  </h2>
+                  <div *ngIf="toggle_open=='Y'" class="accordion accordion-flush" id="accordionFlushExample">
+                    <div class="accordion-body">
+                        <div class="row p-3">
+                            <div class="col-sm-6"><button class="btn btn-success" style="width:100%">Schedule Assessment</button></div>
+                            <div class="col-sm-6"><button class="btn btn-primary" style="width:100%">Add Significant Area/Asset</button></div>
+                        </div>
+                        <div class="row p-3">
+                            <div class="col-sm-6"><button class="btn btn-primary" style="width:100%">Add Tenant</button></div>
+                            <div class="col-sm-6"><button class="btn btn-primary" style="width:100%">Add Security Equipment</button></div>
+                        </div>
+                        <div class="row p-3">
+                            <div class="col-sm-6"><button class="btn btn-primary" style="width:100%">Add Incident</button></div>
+                            <div class="col-sm-6"><button class="btn btn-primary" style="width:100%">Add Notes</button></div>
+                        </div>
+                        <div class="row p-3">
+                            <div class="col-sm-6"><button class="btn btn-primary" style="width:100%">Edit Facility</button></div>
+                            <div class="col-sm-6"><button class="btn btn-primary" style="width:100%">Upload Photos</button></div>
+                        </div>
+                        <div class="row p-3">
+                            <div class="col-sm-6"><button class="btn btn-primary" style="width:100%">Upload Documents</button></div>
+                            <div class="col-sm-6"><button class="btn btn-info" style="width:100%">Preview Dashboard</button></div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+<!--        <app-add-survey-form (posted)="closeAssessmentForm()"  
+            [facility]="facility_id" 
+            [assessment]="assessment_id" *ngIf="assessmentShowing=='Y'">
+        </app-add-survey-form>
+        <app-facility-asset-form (posted)="closeAssetForm()" 
+            [facility]="facility_id" 
+            [asset_id]="asset_id" *ngIf="assetShowing=='Y'">
+        </app-facility-asset-form>
+        <app-facility-contacts-form *ngIf="contactShowing=='Y'" (posted)="closeContactForm()" 
+            [facility]="facility_id" 
+            [contact]="contact_id">
+        </app-facility-contacts-form>
+        <app-facility-documents-form (posted)="closeDocumentForm()" *ngIf="documentShowing=='Y'"
+            [facility]="facility_id"
+            [contact]="contact_id">
+        </app-facility-documents-form>
+        <app-facility-incident-form (posted)="closeDocumentForm()" *ngIf="incidentShowing=='Y'"
+            [facility]="facility_id"
+            [incident]="incident_id">
+        </app-facility-incident-form>
+        <app-facility-saa-form (posted)="closeSaaForm()" *ngIf="saaShowing=='Y'"
+            [saa]="saa_id"
+            [facility]="facility_id"></app-facility-saa-form>
+        <app-facility-notes-form (posted)="closeNotesForm()" *ngIf="notesShowing=='Y'">
+            [facility]="facility_id"
+            [notes]="note_id"
+        </app-facility-notes-form>
+        <app-facility-tenant-form (posted)="closeTenantForm()" *ngIf="tenantShowing=='Y'">
+            [facility]="facility_id"
+            [tenant]="tenant_id"
+        </app-facility-tenant-form> -->
+    </div>
+</div>

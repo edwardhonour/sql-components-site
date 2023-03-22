@@ -1,0 +1,27 @@
+<div class="container-fluid m-2">
+    <div class="card">
+        <div class="card-header">
+            <div class="card-title"><h2>Survey Template List</h2></div>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="table table-striped table-condensed">
+                        <thead>
+                            <tr>
+                                <td>Template Name</td>
+                                <td></td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let m of data.list">
+                                <td>{{ m.TEMPLATE_NAME }}</td>
+                                <td><button (click)="doClick(m)" class="btn btn-dark">Preview</button></td>
+                            </tr>
+                        </tbody>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
