@@ -1,3 +1,4 @@
+<div class="content-wrapper">
 <div class="flex flex-col flex-auto w-full min-w-0">
     <div class="flex flex-col flex-auto">
         <div class="container-fluid" style="min-height: 1000px;">
@@ -9,10 +10,10 @@
                                 <div class="col-sm-8">
                                     <h2>Survey Section - {{ data?.section?.section_name }}</h2>
                                 </div>
-                                <div class="col-sm-3">
-                                    <button class="btn btn-danger" (click)="showUpload()">Upload Excel</button>
-                                    <button style="margin-left: 20px;" class="btn btn-primary" [routerLink]="['/preview-section',data.section.template_id, data.formData.section_id]">Preview Section</button>
-                                    <button style="margin-left: 20px;" class="btn btn-secondary" [routerLink]="['/template-dashboard',data.section.template_id]">Go Back</button>
+                                <div class="col-sm-6">
+                                    <button class="btn btn-danger" (click)="showUpload()"><i class="bi bi-cloud-upload"></i></button>
+                                    <button style="margin-left: 20px;" class="btn btn-primary" [routerLink]="['/preview-section',data.section.template_id, data.formData.section_id]"><i class="bi bi-search"></i></button>
+                                    <button style="margin-left: 20px;" class="btn btn-secondary" [routerLink]="['/template-dashboard',data.section.template_id]"><i class="bi bi-backspace"></i></button>
                                 </div>
                             </div>  
                         </div>
@@ -74,4 +75,5 @@
         <span class="font-medium text-secondary">SQLLabs Inc. &copy; 2023</span>
     </div>
 
+</div>
 </div>

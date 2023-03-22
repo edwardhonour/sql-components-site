@@ -101,9 +101,9 @@ export class TemplateDashboardComponent implements OnInit, OnDestroy
     }
 
     doEdit(m: any) {
-      this.data.formData['ID']=m.ID;
-      this.data.formData['SECTION_NAME']=m.SECTION_NAME;
-      this.data.formData['SECTION_ORDER']=m.SECTION_ORDER;
+      this.data.formData['id']=m.id;
+      this.data.formData['section_name']=m.section_name;
+      this.data.formData['section_order']=m.section_order;
       this.adding='Y';
     }
 

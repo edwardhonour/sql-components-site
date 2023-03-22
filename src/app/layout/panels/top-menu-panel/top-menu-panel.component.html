@@ -1,13 +1,13 @@
 <div class="container-fluid">
     <div class="row">
-        <div class="d-none d-lg-block col-lg-12 p-4" style="background-color: lightgrey;">
+        <div class="d-none d-lg-block col-lg-12 p-1">
             <button *ngIf="AS=='Y'" (click)="toggleStakeholder(0)" class="btn btn-primary">Add Stakeholder</button>
             <button *ngIf="AF=='Y'" (click)="toggleFacility(0)" class="btn btn-primary"  style="margin-left: 20px;">Add Facility</button>
             <button *ngIf="AF=='Y'" (click)="toggleAssessment(0)" class="btn btn-primary" style="margin-left: 20px;">Schedule Assessment</button>
             <button *ngIf="PQ=='Y'" [routerLink]="['/preview-list']" class="btn btn-primary" style="margin-left: 20px;">Preview Question Set</button>
             <button *ngIf="PQ=='Y'" [routerLink]="['/preview-list']" class="btn btn-primary" style="margin-left: 20px;">Invite Stakeholder User</button>
         </div>
-        <div class="d-none d-md-block d-lg-none col-sm-12 p-4" style="background-color: lightgrey;">
+        <div class="d-none d-md-block d-lg-none col-sm-12 p-1">
             <div class="accordion" id="accordionExample">
                 <div class="accordion-item">
                   <h2 class="accordion-header" id="headingOne">

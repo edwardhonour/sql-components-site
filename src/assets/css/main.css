@@ -568,7 +568,7 @@ img {
 
 /************* 6.2 Sidebar Wrapper *************/
 .sidebar-wrapper {
-  width: 210px;
+  width: 280px;
   padding: 0;
   height: calc(100vh - 20px);
   border-radius: 10px 90px 90px 10px;
@@ -5960,9 +5960,6 @@ select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
   border: 1px solid #149865;
-  -webkit-text-fill-color: #232629;
-  -webkit-box-shadow: 0 0 0px 100px rgba(0, 0, 0, 0.8) inset;
-          box-shadow: 0 0 0px 100px rgba(0, 0, 0, 0.8) inset;
 }
 
 /******** 11.21 File Upload ********/

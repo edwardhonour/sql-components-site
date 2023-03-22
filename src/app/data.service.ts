@@ -6,7 +6,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 })
 export class DataService {
 
-  public locationSubject = new BehaviorSubject<any>({ location: 'Home', link: '/', count: 0});
+  public locationSubject = new BehaviorSubject<any>({ name: 'Home', link: '/', count: 0, isSmall: 'N', hideNav: 'N', hideHeader: 'N'});
   public pageSubject = new BehaviorSubject<any>('{}');
   public paramSubject = new BehaviorSubject<any>('{}');
   public routerSubject = new BehaviorSubject<any>('{}');

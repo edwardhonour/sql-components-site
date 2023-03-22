@@ -1,27 +1,16 @@
-<app-vert-side-nav [source]="data"></app-vert-side-nav>
+<div class="content-wrapper">
 <div class="flex flex-col flex-auto w-full min-w-0">
-    <div class="flex flex-col flex-auto">
-             <div class="container-fluid p-3">
-                <div class="row">
-                    <div class="col-md-12 p-4">
-                        <h1 style="font-size: 24px; font-weight: bold;">{{ data?.template.template_name }} - {{ data?.facility.facility_name }}</h1>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                            <app-assessment-info-top-menu [assessment_id]="data?.assessment.id"></app-assessment-info-top-menu>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                            <app-assessment-info-panel [assessment_id]="data?.assessment.id"></app-assessment-info-panel>
-                    </div>
-                </div>
-            </div>           
+    <div class="card">
+        <div class="card-header" style="margin-top:0px;">
+            <h1 style="font-size: 24px; font-weight: bold;">{{ data?.template.template_name }} - {{ data?.facility.facility_name }}</h1>
+        </div>
+        <div class="card-body">
+            <app-assessment-info-panel [assessment_id]="data?.assessment.id"></app-assessment-info-panel>
+        </div>
     </div>
-
     <div class="relative flex flex-0 items-center justify-start w-full h-14 px-4 md:px-6 z-49 border-t bg-card dark:bg-transparent print:hidden">
         <span class="font-medium text-secondary">SQLLabs Inc. &copy; 2023</span>
     </div>
 
+</div>
 </div>

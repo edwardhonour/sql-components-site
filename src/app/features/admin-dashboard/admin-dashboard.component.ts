@@ -18,6 +18,7 @@ import { TestGridPanelComponent } from 'src/app/admin/survey/panels/test-grid-pa
 import { AssessmentCardListPanelComponent } from '../assessment/panels/assessment-card-list-panel/assessment-card-list-panel.component';
 import { FacilityCardListPanelComponent } from '../facility/panels/facility-card-list-panel/facility-card-list-panel.component'; 
 import { StakeholderCardListPanelComponent } from '../facility/panels/stakeholder-card-list-panel/stakeholder-card-list-panel.component'; 
+import { DataService } from 'src/app/data.service';
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -48,12 +49,16 @@ export class AdminDashboardComponent implements OnInit, OnDestroy
 
      constructor(
       private _activatedRoute: ActivatedRoute,
+      private _dataService: DataService,
       private _router: Router,
       public http: HttpClient  // used by upload
   ) { }
 
     ngOnInit(): void
     {      
+      let d = { name: 'home', link: '/', count: 0, isSmall: 'N', hideNav: 'N', hideHeader: 'N'};
+      this._dataService.locationSubject.next(d);
+
             this._activatedRoute.data.subscribe(({ 
               data, menudata, userdata })=> { 
               this.data=data;

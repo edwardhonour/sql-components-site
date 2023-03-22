@@ -1,24 +1,21 @@
+<div class="content-wrapper">
 <div class="flex flex-col flex-auto w-full min-w-0">
-
-
     <div class="flex flex-col flex-auto">
         <div class="container-fluid" style="background-color:aliceblue; min-height: 1000px;">
             <div class="row">
                 <div class="col-sm-12">
                     <div class="card" style="margin-top: 20px;">
-                        <div class="card-header">
-                        <h2>Survey Templates</h2>
+                        <div class="card-header" style="margin-top:0px;">
+                            <div class="col-10"><h2>Survey Templates</h2></div>
+                            <div class="col-2" style="text-align: right;">
+                                <button (click)="toggleAdd();" class="btn btn-primary float-right justify-content-end justify-self-end" style="margin-right:10px;"><i class="bi bi-plus-square"></i></button>
+                            </div>
                         </div>
                         <div class="card-body">
-                            <div class="row">
-                                <div class="col-sm-12" style="background-color: lightgray;" style="padding: 10px;">
-                                    <button (click)="toggleAdd();" class="btn btn-primary" style="margin-right:10px;">Add Template</button>
-                                </div>
-                            </div>
                             <div *ngIf="adding=='Y'" class="row">
                                 <div class="col-sm-12" style="background-color: lightgray;" style="padding: 10px;">
                                     <div class="card">
-                                        <div class="card-header">
+                                        <div class="card-header" style="margin-top:0px;">
                                             Add Template
                                         </div>
                                         <div class="card-body">
@@ -167,7 +164,7 @@
                                                 <th>Asset Type</th>
                                                 <th>Sector</th>
                                                 <th>Visibility</th>
-                                                <th style="width: 190px;"></th>
+                                                <th style="width: 75px;"></th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -190,9 +187,10 @@
                                                 <td>
                                                     {{ m.visibility }}
                                                 </td>
-                                                <td style="max-width: 190px;">
-                                                    <button [routerLink]="['/template-dashboard',m.id]" class="btn btn-primary">Dashboard</button> 
-                                                </td>
+
+                                                    <td><button class="btn btn-primary" [routerLink]="['/template-dashboard',m.id]"><i class="bi bi-clipboard-data"></i></button></td>
+ 
+                  
                                             </tr>
                                         </tbody>
                                     </table>  
@@ -210,4 +208,5 @@
         <span class="font-medium text-secondary">SQLLabs Inc. &copy; 2023</span>
     </div>
 
+</div>
 </div>

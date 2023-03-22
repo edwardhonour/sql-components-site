@@ -54,6 +54,7 @@ export class NewSigninComponent implements OnInit {
       private _dataService: DataService
   )
   {
+    
   }
 
   // -----------------------------------------------------------------------------------------------------
@@ -69,6 +70,8 @@ export class NewSigninComponent implements OnInit {
       // CHANGE THIS VARIABLE TO 'Y' WHEN MOVING TO PRODUCION 
       // CHANGE THIS VARIABLE TO 'N' WHEN IN DEVELOPMENT AND TESTING
       //----------------------------------------------------------------
+      let d = { name: 'sign-in', link: '/sign_in', count: 0, isSmall: 'N', hideNav: 'Y'};
+      this._dataService.locationSubject.next(d);
       let production='N'
       if (production=='Y') {
         localStorage.removeItem('uid')

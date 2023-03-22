@@ -1,11 +1,11 @@
 
+<div class="content-wrapper">
 <div class="flex flex-col flex-auto w-full min-w-0">
     <div class="flex flex-col flex-auto">
-        <div class="container-fluid" style="background-color:aliceblue; min-height: 1000px;">
             <div class="row">
                 <div class="col-sm-12">
                     <div class="card" style="margin-top: 20px;">
-                        <div class="card-header">
+                        <div class="card-header" style="margin-top:0px;">
                         <h2>Survey - {{ data?.template['template_name'] }}</h2>
                         </div>
                         <div class="card-body">
@@ -52,8 +52,8 @@
                             <div *ngIf="adding=='Y'" class="row">
                                 <div class="col-sm-12" style="background-color: lightgray;" style="padding: 10px;">
                                     <div class="card">
-                                        <div class="card-header">
-                                            Add Section
+                                        <div class="card-header" style="margin-top:0px;">
+                                            Add/Edit Section
                                         </div>
                                         <div class="card-body">
                                             <div class="row" style="margin-bottom: 20px;">
@@ -103,10 +103,10 @@
                                                 <td>
                                                     {{ m.section_order }}
                                                 </td>
-                                                <td style="max-width: 290px;">
-                                                    <button [routerLink]="['/template-section-dashboard',m.id]" class="btn btn-primary">Dashboard</button> 
-                                                    <button (click)="doEdit(m)" style="margin-left: 20px;" class="btn btn-dark">Edit/Reorder</button>
-                                                </td>
+                                                <td style="width: 100px; text-align: right;">
+                                                    <button class="btn btn-primary" [routerLink]="['/template-section-dashboard',m.id]"><i class="bi bi-clipboard-data"></i></button>
+                                                    <button (click)="doEdit(m)" style="margin-left: 20px;" class="btn btn-dark"><i class="bi bi-arrow-down-up"></i></button>
+                                                 </td>
                                             </tr>
                                         </tbody>
                                     </table>      
@@ -116,7 +116,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+
     </div>
 
     
@@ -124,4 +124,5 @@
         <span class="font-medium text-secondary">SQLLabs Inc. &copy; 2023</span>
     </div>
 
+</div>
 </div>

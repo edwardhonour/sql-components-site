@@ -1,11 +1,20 @@
-<div class="page-wrapper">
-      <app-sitebar-wrapper></app-sitebar-wrapper>
-</div>
-<div class="main-container">
-    <app-page-header></app-page-header>
-    <div class="content-wrapper-scroll">
-        <router-outlet></router-outlet>
-    <app-page-footer></app-page-footer>
-</div>
-</div>
+<div class="container-fluid main-container">
+    <div *ngIf="data.hideHeader=='N'" class="row">
+        <div class="col-12">
+            <app-page-header></app-page-header>
+        </div>
+    </div>
+    <div class="row">
+        <div *ngIf="data.hideNav=='N'" class="d-none d-sm-none d-lg-none d-xl-block col-2">
+            <app-sitebar-wrapper></app-sitebar-wrapper>
+        </div>
+        <div [class]="contentClass">
+            <div class="content-wrapper-scroll">
+                <router-outlet></router-outlet>
+            <app-page-footer></app-page-footer>
+        </div>
+    </div>
+    <div>
 
+    </div>
+</div>

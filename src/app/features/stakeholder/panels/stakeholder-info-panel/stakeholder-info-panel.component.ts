@@ -3,13 +3,14 @@ import { CommonModule } from '@angular/common';
 import { DataService } from '/Users/user/sql-components-site/src/app/data.service';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { TopMenuPanelComponent } from 'src/app/layout/panels/top-menu-panel/top-menu-panel.component';
 
 @Component({
   selector: 'app-stakeholder-info-panel',
   standalone: true,
-  imports: [CommonModule, FormsModule, RouterModule],
+  imports: [CommonModule, FormsModule, RouterModule, TopMenuPanelComponent],
   templateUrl: './stakeholder-info-panel.component.html',
-  styleUrls: ['./stakeholder-info-panel.component.scss']
+  styleUrls: ['./stakeholder-info-panel.component.css']
 })
 export class StakeholderInfoPanelComponent implements OnChanges, OnInit {
     

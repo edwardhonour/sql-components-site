@@ -1,40 +1,38 @@
-<div class="flex flex-col flex-auto w-full min-w-0">
-
-
-    <div class="flex flex-col flex-auto">
-             <div class="container-fluid">
-                <div class="row" style="background-color: lightgrey;">
-                    <div class="col-md-9 p-4">
-                        <h1 style="font-size: 24px; font-weight: bold;">{{ data?.formData.template_name }} - {{ data?.formData.section_name }}</h1>
-                    </div>
-                    <div class="col-md-3 p-4">
-                        <span [routerLink]="['/template-section-dashboard',data.formData['section_id']]" style="font-size: 24px; font-weight: bold;"><button class="btn btn-primary">Edit Template</button></span>
-                        <span [routerLink]="['/preview-list']" style="margin-left:20px; font-size: 24px; font-weight: bold;"><button class="btn btn-secondary">Go Back</button></span>
-                    </div>
-                </div>
+<div class="content-wrapper">
+    <div class="flex flex-col flex-auto w-full min-w-0">
+<div class="card">
+    <div class="card-header" style="margin-top:0px;">
+            <div class="col-xxl-9">
+                <h2 style="font-size: 24px; font-weight: bold;">{{ data?.formData.template_name }} - {{ data?.formData.section_name }}</h2>
+            </div>
+            <div class="col-3">
+                <span [routerLink]="['/template-section-dashboard',data.formData['section_id']]" style="font-size: 24px; font-weight: bold;"><button class="btn btn-primary"><i class="bi bi-pencil-square"></i></button></span>
+                <span [routerLink]="['/preview-list']" style="margin-left:20px; font-size: 24px; font-weight: bold;"><button class="btn btn-secondary"><i class="bi bi-backspace"></i></button></span>
+            </div>  
+    </div>
+    <div class="card-body">
                 <div class="row">
                     <div class="col-md-3">
                         <ul class="list-group">
                             <ng-container *ngFor="let m of data.sections">
-                                <li [routerLink]="['/preview-section',data?.formData['template_id'],m.option_id]" *ngIf="m.id==data?.formData['section_id']" class="list-group-item active">{{ m.section_name }}</li>
-                                <li [routerLink]="['/preview-section',data?.formData['template_id'],m.option_id]" *ngIf="m.id!=data?.formData['section_id']" class="list-group-item">{{ m.section_name }}</li>
+                                <li [routerLink]="['/preview-section',data?.formData['template_id'],m.id]" *ngIf="m.id==data?.formData['section_id']" class="list-group-item active">{{ m.section_name }}</li>
+                                <li [routerLink]="['/preview-section',data?.formData['template_id'],m.id]" *ngIf="m.id!=data?.formData['section_id']" class="list-group-item">{{ m.section_name }}</li>
                             </ng-container>
                           </ul>
                     </div>
                     <div class="col-md-9">
-                        <div class="container-fluid" style="min-height: 700px; background-color:aliceblue">
+                        <div class="container-fluid" style="min-height: 700px;">
                             <div *ngFor="let m of data?.questions" class="row">
                                 <app-question-panel [survey_id]="'10'" [question_id]="m.option_id"></app-question-panel> 
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>           
-    </div>
-
-    
+                </div>         
     <div class="relative flex flex-0 items-center justify-start w-full h-14 px-4 md:px-6 z-49 border-t bg-card dark:bg-transparent print:hidden">
         <span class="font-medium text-secondary">SQLLabs Inc. &copy; 2023</span>
-    </div>
+    </div>        
+</div>
 
+</div>
+</div>
 </div>
