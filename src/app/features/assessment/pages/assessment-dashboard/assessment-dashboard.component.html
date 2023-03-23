@@ -5,12 +5,20 @@
             <h1 style="font-size: 24px; font-weight: bold;">{{ data?.template.template_name }} - {{ data?.facility.facility_name }}</h1>
         </div>
         <div class="card-body">
-            <app-assessment-info-panel [assessment_id]="data?.assessment.id"></app-assessment-info-panel>
+            <div class="row">
+                <div class="col-3">
+                    <div style="margin-top:30px;">
+                        <app-assessment-dashboard-menu (menuClick)="processClick($event);"></app-assessment-dashboard-menu>
+                    </div>
+                </div>
+                <div class="col-9">
+                    <app-assessment-info-panel [assessment_id]="data?.assessment.id"></app-assessment-info-panel>
+                </div>
+            </div>
         </div>
     </div>
     <div class="relative flex flex-0 items-center justify-start w-full h-14 px-4 md:px-6 z-49 border-t bg-card dark:bg-transparent print:hidden">
         <span class="font-medium text-secondary">SQLLabs Inc. &copy; 2023</span>
     </div>
-
 </div>
 </div>

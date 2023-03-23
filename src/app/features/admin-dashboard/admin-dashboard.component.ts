@@ -19,6 +19,7 @@ import { AssessmentCardListPanelComponent } from '../assessment/panels/assessmen
 import { FacilityCardListPanelComponent } from '../facility/panels/facility-card-list-panel/facility-card-list-panel.component'; 
 import { StakeholderCardListPanelComponent } from '../facility/panels/stakeholder-card-list-panel/stakeholder-card-list-panel.component'; 
 import { DataService } from 'src/app/data.service';
+import { AssessmentDashboardMenuComponent } from '../assessment/panels/assessment-dashboard-menu/assessment-dashboard-menu.component';
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -26,7 +27,7 @@ import { DataService } from 'src/app/data.service';
   imports: [CommonModule, VertSideNavComponent, AssessmentCardListPanelComponent, FacilityCardListPanelComponent,
     RouterModule, TestGridPanelComponent, StakeholderCardListPanelComponent,
     Ng2SearchPipeModule, StakeholderFormComponent, TopMenuPanelComponent,
-    NgxTablePaginationModule, MatRadioModule, FacilityFormComponent,
+    NgxTablePaginationModule, MatRadioModule, FacilityFormComponent, AssessmentDashboardMenuComponent,
     FormsModule, CalendarPanelComponent],
   templateUrl: './admin-dashboard.component.html',
   styleUrls: ['./admin-dashboard.component.css']

@@ -13,6 +13,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { VertSideNavComponent } from 'src/app/layout/panels/vert-side-nav/vert-side-nav.component';
 import { AssessmentInfoPanelComponent } from '../../panels/assessment-info-panel/assessment-info-panel.component';
 import { AssessmentInfoTopMenuComponent } from '../../panels/assessment-info-top-menu/assessment-info-top-menu.component';
+import { AssessmentDashboardMenuComponent } from '../../panels/assessment-dashboard-menu/assessment-dashboard-menu.component';
 
 @Component({
   selector: 'app-assessment-dashboard',
@@ -20,7 +21,8 @@ import { AssessmentInfoTopMenuComponent } from '../../panels/assessment-info-top
   imports: [CommonModule, 
     RouterModule, 
     Ng2SearchPipeModule, VertSideNavComponent, AssessmentInfoTopMenuComponent,
-    NgxTablePaginationModule,  MatRadioModule, AssessmentInfoPanelComponent,
+    NgxTablePaginationModule,  MatRadioModule, AssessmentInfoPanelComponent, 
+    AssessmentDashboardMenuComponent,
     FormsModule],
   templateUrl: './assessment-dashboard.component.html',
   styleUrls: ['./assessment-dashboard.component.css']
@@ -61,6 +63,11 @@ export class AssessmentDashboardComponent implements OnInit, OnDestroy
                   this._router.navigate(['/forced-off',this.data.user.force_logout]);
               }
             }) 
+    }
+
+    processClick(m: any) {
+      console.log('dashboard')
+      console.log(m);
     }
 
     ngOnDestroy(): void
