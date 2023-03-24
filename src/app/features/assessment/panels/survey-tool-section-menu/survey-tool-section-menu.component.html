@@ -1,0 +1,17 @@
+<!--
+id               int(11) 
+create_timestamp datetime 
+template_id      int(11) 
+section_name     varchar(90)
+section_order    int(11)
+-->
+<sql-data-menu [id]="id" (menuClick)="processClick($event);"
+     [use_parameters]="'N'"
+     [function]="''"
+     [sql]="'select id, section_name from psp_survey_section where template_id = :id order by section_order '"
+     [id]="id"
+     [id2]="'0'"
+     [id3]="'0'"
+     [style]="''"
+     [title]="'Menu Title'">
+</sql-data-menu>

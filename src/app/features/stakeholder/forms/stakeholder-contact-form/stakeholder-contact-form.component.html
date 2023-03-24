@@ -1,0 +1,235 @@
+<!--
+id                  int(11)
+create_timestamp    datetime
+stakeholder_id      int(11)
+stakeholder_name    varchar(80)
+contact_type        varchar(80)
+contact_division    varchar(80)
+description         varchar(1000)
+first_name          varchar(80)
+middle_name         varchar(80)
+last_name           varchar(80)
+suffix              varchar(10)
+assistant           varchar(80)
+assistant_phone     varchar(80)
+assistant_id        int(11)
+email               varchar(80)
+email_opt_out       varchar(1)
+address             varchar(80)
+address2            varchar(80)
+city                varchar(40)
+state               varchar(10)
+zip                 varchar(15)
+office_phone        varchar(20)
+mobile_phone        varchar(20)
+birthdate           date
+record_type         varchar(80)
+gender_identity     varchar(1)
+reports_to          varchar(80)
+reports_to_id       int(11)
+salutation          varchar(10)
+title               varchar(80)
+username            varchar(80)
+contact_uid         int(11)
+-->
+<sql-form
+     [id] = "id"
+     [table] = "'psp_stakeholder_contact'"
+     [embedded] = "'N'"
+     [card] = "'Y'"
+     [default_col]="'stakeholder_id'"
+     [default_value]="'1'"
+     [class] = "''"
+     [style] = "''"
+     [title] = "'Add/Edit Stakeholder Contacts'"
+     [bs_row] = "'Y'"
+     [bs_col] = "'col-12'"
+     [handler] = "'default'">
+
+<div class="row"> 
+  <div class="col-6"> 
+
+          <sql-input 
+               [col]= "'first_name'"
+               [class]="''"
+               [style] = "''"
+               [hint] = "''"
+               [label] = "'First Name'"
+               [placeholder] = "''"
+               [appearance] = "'outline'"
+               [bs_row] = "'N'"
+               [bs_col] = "''"
+               [top_label] = "'N'">
+          </sql-input>
+
+          <sql-input 
+               [col]= "'middle_name'"
+               [class]="''"
+               [style] = "''"
+               [hint] = "''"
+               [label] = "'Middle Name'"
+               [placeholder] = "''"
+               [appearance] = "'outline'"
+               [bs_row] = "'N'"
+               [bs_col] = "''"
+               [top_label] = "'N'">
+          </sql-input>
+
+          <sql-input 
+               [col]= "'last_name'"
+               [class]="''"
+               [style] = "''"
+               [hint] = "''"
+               [label] = "'Last Name'"
+               [placeholder] = "''"
+               [appearance] = "'outline'"
+               [bs_row] = "'N'"
+               [bs_col] = "''"
+               [top_label] = "'N'">
+          </sql-input>
+          <sql-input 
+               [col]= "'suffix'"
+               [class]="''"
+               [style] = "'width:100px;'"
+               [hint] = "''"
+               [label] = "'Suffix'"
+               [placeholder] = "''"
+               [appearance] = "'outline'"
+               [bs_row] = "'N'"
+               [bs_col] = "''"
+               [top_label] = "'N'">
+          </sql-input>
+
+          <sql-input 
+               [col]= "'title'"
+               [class]="''"
+               [style] = "'width:600px;'"
+               [hint] = "''"
+               [label] = "'title'"
+               [placeholder] = "''"
+               [appearance] = "'outline'"
+               [bs_row] = "'Y'"
+               [bs_col] = "'col-12'"
+               [top_label] = "'N'">
+          </sql-input>   
+
+          <sql-input 
+               [col]= "'email'"
+               [class]="''"
+               [style] = "'width:600px;'"
+               [hint] = "''"
+               [label] = "'Email'"
+               [placeholder] = "''"
+               [appearance] = "'outline'"
+               [bs_row] = "'Y'"
+               [bs_col] = "'col-12'"
+               [top_label] = "'N'">
+          </sql-input>
+          <div class="row"> 
+               <div class="col-12"> 
+          <sql-input 
+               [col]= "'office_phone'"
+               [class]="''"
+               [style] = "''"
+               [hint] = "''"
+               [label] = "'Office Phone'"
+               [placeholder] = "''"
+               [appearance] = "'outline'"
+               [bs_row] = "'N'"
+               [bs_col] = "''"
+               [top_label] = "'N'">
+          </sql-input>   
+          
+          <sql-input 
+               [col]= "'mobile_phone'"
+               [class]="''"
+               [style] = "''"
+               [hint] = "''"
+               [label] = "'Mobile Phone'"
+               [placeholder] = "''"
+               [appearance] = "'outline'"
+               [bs_row] = "'N'"
+               [bs_col] = "''"
+               [top_label] = "'N'">
+          </sql-input>   
+          
+          </div>
+          </div>
+     </div>
+     <div class="col-6"> 
+          <sql-input 
+               [col]= "''"
+               [class]="''"
+               [style] = "''"
+               [hint] = "''"
+               [label] = "'Address'"
+               [placeholder] = "''"
+               [appearance] = "'outline'"
+               [bs_row] = "'Y'"
+               [bs_col] = "'col-12'"
+               [top_label] = "'N'">
+          </sql-input>
+          <sql-input 
+               [col]= "'address2'"
+               [class]="''"
+               [style] = "''"
+               [hint] = "''"
+               [label] = "''"
+               [placeholder] = "''"
+               [appearance] = "'outline'"
+               [bs_row] = "'Y'"
+               [bs_col] = "'col-12'"
+               [top_label] = "'N'">
+          </sql-input>
+          <sql-input 
+               [col]= "'city'"
+               [class]="''"
+               [style] = "''"
+               [hint] = "''"
+               [label] = "'City'"
+               [placeholder] = "''"
+               [appearance] = "'outline'"
+               [bs_row] = "'N'"
+               [bs_col] = "''"
+               [top_label] = "'N'">
+          </sql-input>
+          <sql-input 
+               [col]= "'state'"
+               [class]="''"
+               [style] = "''"
+               [hint] = "''"
+               [label] = "'State'"
+               [placeholder] = "''"
+               [appearance] = "'outline'"
+               [bs_row] = "'N'"
+               [bs_col] = "''"
+               [top_label] = "'N'">
+          </sql-input>
+          <sql-input 
+               [col]= "'zip'"
+               [class]="''"
+               [style] = "''"
+               [hint] = "''"
+               [label] = "'Zip'"
+               [placeholder] = "''"
+               [appearance] = "'outline'"
+               [bs_row] = "'N'"
+               [bs_col] = "''"
+               [top_label] = "'N'">
+          </sql-input>
+          <sql-default-value 
+               [col] = "'stakeholder_id'"
+               [value] = "id"
+               >
+          </sql-default-value>
+          <sql-submit 
+               [label] = "'Save Changes'"
+               [class] = "'btn btn-primary'"
+               [style] = "''">
+          </sql-submit>
+
+     </div>
+</div>
+
+
+</sql-form>

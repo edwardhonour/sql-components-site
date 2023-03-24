@@ -1,0 +1,69 @@
+<!--
+id                  int(11)
+create_timestamp    datetime
+stakeholder_id      int(11)
+stakeholder_name    varchar(80)
+contact_type        varchar(80)
+contact_division    varchar(80)
+description         varchar(1000)
+first_name          varchar(80)
+middle_name         varchar(80)
+last_name           varchar(80)
+suffix              varchar(10)
+assistant           varchar(80)
+assistant_phone     varchar(80)
+assistant_id        int(11)
+email               varchar(80)
+email_opt_out       varchar(1)
+address             varchar(80)
+address2            varchar(80)
+city                varchar(40)
+state               varchar(10)
+zip                 varchar(15)
+office_phone        varchar(20)
+mobile_phone        varchar(20)
+birthdate           date
+record_type         varchar(80)
+gender_identity     varchar(1)
+reports_to          varchar(80)
+reports_to_id       int(11)
+salutation          varchar(10)
+title               varchar(80)
+username            varchar(80)
+contact_uid         int(11)
+-->
+<sql-table 
+[title]="title"
+[sql]="'select id, last_name, first_name, title, email, office_phone, mobile_phone from psp_stakeholder_contact where stakeholder_id = :id order by last_name, first_name'"
+[id] = "id"
+[id2] = "'0'"
+[id3] = "'0'"
+[function] = "''"
+[use_parameters] = "'N'"
+[card] = "'Y'"
+[card_class] = "''"
+[card_style] = "''"
+[container_class] = "'container-fluid m-2 p-2'"
+[container_style] = "''"
+[search] = "'TOP'"
+[bs_row] = "'Y'"
+[bs_col] = "'col-sm-12 col-lg-12 col-xl-12'"
+[table_class] = "'table table-striped table-condensed'"
+[table_style] = "''"
+[pagination] = "'Y'"
+[pagesize] = 25
+[class] = "'table table-striped table-condensed'"
+[style] = ""
+[handler] = "'default'"
+(button_click) = "buttonClick($event);"
+(row_click) = "rowClick($event);"
+>
+<th #column id="id">ID</th>
+<th #column id="last_name">Last Name</th>
+<th #column id="first_name">First Name</th>
+<th #column id="title">Title</th>
+<th #column id="email">Email</th>
+<th #column id="office_phone">Office Phone</th>
+<th #column id="mobile_phone">Mobile Phone</th>
+<button #column value="" class="btn btn-primary"><i class="bi bi-clipboard2-data"></i></button>
+</sql-table>

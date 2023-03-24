@@ -14,8 +14,6 @@ export class AssessmentDashboardMenuComponent {
   @Output() menuClick: EventEmitter<any> = new EventEmitter<any>(); 
 
   processClick(m: any) {
-     console.log('the component');
-     console.log(m);
      this.menuClick.emit(m);
   }
 

@@ -20,9 +20,11 @@ import { FacilityListComponent } from './features/facility/pages/facility-list/f
 import { StakeholderDashboardComponent } from './features/stakeholder/pages/stakeholder-dashboard/stakeholder-dashboard.component';
 import { StakeholderListComponent } from './features/stakeholder/pages/stakeholder-list/stakeholder-list.component';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
+import { TestPageComponent } from './pages/test-page/test-page.component';
 
 const routes: Routes = [
   { path: '', component: LandingPageComponent },
+  { path: 'test', component: TestPageComponent },
   { path: 'assessment-dashboard/:id', component: AssessmentDashboardComponent, resolve: { menudata: MenuResolver, data: DataResolver, userdata: UserResolver }},
   { path: 'stakeholders', component: StakeholderListComponent, resolve: { menudata: MenuResolver, data: DataResolver, userdata: UserResolver } },
   { path: 'stakeholder-dashboard/:id', component: StakeholderDashboardComponent,  resolve: { menudata: MenuResolver, data: DataResolver, userdata: UserResolver } },
