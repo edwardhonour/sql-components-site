@@ -32,13 +32,12 @@ title               varchar(80)
 username            varchar(80)
 contact_uid         int(11)
 -->
-<sql-table 
+<sql-add-table 
 [title]="title"
 [sql]="'select id, last_name, first_name, title, email, office_phone, mobile_phone from psp_stakeholder_contact where stakeholder_id = :id order by last_name, first_name'"
 [id] = "id"
 [id2] = "'0'"
 [id3] = "'0'"
-[function] = "''"
 [use_parameters] = "'N'"
 [card] = "'Y'"
 [card_class] = "''"
@@ -66,4 +65,5 @@ contact_uid         int(11)
 <th #column id="office_phone">Office Phone</th>
 <th #column id="mobile_phone">Mobile Phone</th>
 <button #column value="" class="btn btn-primary"><i class="bi bi-clipboard2-data"></i></button>
-</sql-table>
+<div form><app-stakeholder-contact-form></app-stakeholder-contact-form></div>
+</sql-add-table>

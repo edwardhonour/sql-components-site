@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpClientModule, HttpHeaders, HttpParams } from '@angular/common/http';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, of } from 'rxjs';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -54,6 +55,25 @@ export class DataService {
 
   this.t= this.http.post(this.url, data);
   return this.t;
+
+  }
+
+  getPing(path: any) {
+    this.getLocalStorage();
+
+    let output: any = { page: '', id: '', id2: '', id3: '' };
+
+    let j: any = path.split('/');
+    console.log('p1');
+    console.log(j);
+    console.log('p2');
+
+    if (j[1]!==undefined) { output.page=j[1]; }
+    if (j[2]!==undefined) { output.id=j[2];   }
+    if (j[3]!==undefined) { output.id2=j[3];  }
+    if (j[4]!==undefined) { output.id3=j[4];  }
+
+    return of(output);
 
   }
 

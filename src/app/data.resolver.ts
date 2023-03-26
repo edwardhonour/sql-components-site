@@ -50,6 +50,42 @@ export class DataResolver implements Resolve<boolean> {
 }
 
 @Injectable({
+  providedIn: 'root'              
+})
+export class PingResolver implements Resolve<boolean> {
+
+  r: any;
+  path: any;
+  id: any;
+  id2: any;
+  id3: any;
+
+  constructor(private dataService: DataService) { }
+
+  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> {
+      //--
+      //-- In order to use a single resolver and data service for all queries we manually 
+      //-- parse the url and pass the path and parameters to the data service.
+      //--
+      this.path = '';      
+
+      if (state.url!==undefined) {
+        this.path = state.url;
+      }
+
+     console.log('pingResolver')
+    this.r=this.dataService.getPing(this.path).pipe(catchError(err=> 
+      { 
+        console.log('Error')
+        console.log(err);
+        return of(null);
+      }));
+      console.log(this.r);
+    return (this.r)
+  }
+}
+
+@Injectable({
   providedIn: 'root'
 })
 export class MenuResolver implements Resolve<boolean> {

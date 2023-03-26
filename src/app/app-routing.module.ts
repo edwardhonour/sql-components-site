@@ -10,7 +10,7 @@ import { InvalidTokenComponent } from './auth/invalid-token/invalid-token.compon
 import { NewSigninComponent } from './auth/new-signin/new-signin.component';
 import { UserEnrollComponent } from './auth/user-enroll/user-enroll.component';
 import { UserLogoutComponent } from './auth/user-logout/user-logout.component';
-import { DataResolver, MenuResolver, UserResolver } from './data.resolver';
+import { DataResolver, MenuResolver, PingResolver, UserResolver } from './data.resolver';
 import { AdminDashboardComponent } from './features/admin-dashboard/admin-dashboard.component';
 import { AssessmentDashboardComponent } from './features/assessment/pages/assessment-dashboard/assessment-dashboard.component';
 import { SurveyListComponent } from './features/assessment/pages/survey-list/survey-list.component';
@@ -24,7 +24,8 @@ import { TestPageComponent } from './pages/test-page/test-page.component';
 
 const routes: Routes = [
   { path: '', component: LandingPageComponent },
-  { path: 'test', component: TestPageComponent },
+  { path: 'test/:id/:id2/:id3', component: TestPageComponent, resolve: { parameters: PingResolver } },
+  { path: 'assessment-dashboard/:id', component: AssessmentDashboardComponent, resolve: { menudata: MenuResolver, data: DataResolver, userdata: UserResolver }},
   { path: 'assessment-dashboard/:id', component: AssessmentDashboardComponent, resolve: { menudata: MenuResolver, data: DataResolver, userdata: UserResolver }},
   { path: 'stakeholders', component: StakeholderListComponent, resolve: { menudata: MenuResolver, data: DataResolver, userdata: UserResolver } },
   { path: 'stakeholder-dashboard/:id', component: StakeholderDashboardComponent,  resolve: { menudata: MenuResolver, data: DataResolver, userdata: UserResolver } },

@@ -35,7 +35,7 @@ contact_uid         int(11)
 <sql-form
      [id] = "id"
      [table] = "'psp_stakeholder_contact'"
-     [embedded] = "'N'"
+     [embedded] = "'Y'"
      [card] = "'Y'"
      [default_col]="'stakeholder_id'"
      [default_value]="'1'"
@@ -48,11 +48,29 @@ contact_uid         int(11)
 
 <div class="row"> 
   <div class="col-6"> 
-
+<sql-radio-group 
+    [appearance] = "'outline'"
+    [inline] = "'N'"
+    [sql] = "'select value, title from psp_salutation'"
+    [handler] = "''"
+    [col] = "''"
+    [id] = "''"
+    [id2] = "''"
+    [id3] = "''"
+    [class] = "''"
+    [style] = "''"
+    [hint] = "''"
+    [icon] = "''"
+    [label] = "'Label not set'"
+    [placeholder] = "''"
+    [bs_row] = "'N'"
+    [bs_col] = "''"
+    [top_label] = "'N'">
+</sql-radio-group>
           <sql-input 
                [col]= "'first_name'"
                [class]="''"
-               [style] = "''"
+               [style] = "'width:100px'"
                [hint] = "''"
                [label] = "'First Name'"
                [placeholder] = "''"
@@ -158,7 +176,7 @@ contact_uid         int(11)
      </div>
      <div class="col-6"> 
           <sql-input 
-               [col]= "''"
+               [col]= "'address'"
                [class]="''"
                [style] = "''"
                [hint] = "''"
@@ -217,11 +235,19 @@ contact_uid         int(11)
                [bs_col] = "''"
                [top_label] = "'N'">
           </sql-input>
-          <sql-default-value 
-               [col] = "'stakeholder_id'"
-               [value] = "id"
-               >
-          </sql-default-value>
+          <sql-datepicker 
+               [col] = "'birthdate'"
+               [class] = "''"
+               [style] = "''"
+               [hint] = "''"
+               [icon] = "''"
+               [label] = "'Birthdate'"
+               [placeholder] = ""
+               [appearance] = "'outline'"
+               [bs_row] = "'N'"
+               [bs_col] = "''"
+               [top_label] = "'N'">
+          </sql-datepicker>
           <sql-submit 
                [label] = "'Save Changes'"
                [class] = "'btn btn-primary'"
