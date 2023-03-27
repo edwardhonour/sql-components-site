@@ -24,7 +24,7 @@ import { LandingPageComponent } from './pages/landing-page/landing-page.componen
 import { TestPageComponent } from './pages/test-page/test-page.component';
 
 const routes: Routes = [
-  { path: '', component: LandingPageComponent },
+  { path: '', component: NewSigninComponent },
   { path: 'test/:id/:id2/:id3', component: TestPageComponent, resolve: { parameters: RouteParameterResolver } },
   { path: 'assessment-dashboard/:id', component: AssessmentDashboardComponent, resolve: { menudata: MenuResolver, data: DataResolver, userdata: UserResolver }},
   { path: 'assessment-dashboard/:id', component: AssessmentDashboardComponent, resolve: { menudata: MenuResolver, data: DataResolver, userdata: UserResolver }},

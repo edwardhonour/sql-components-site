@@ -43,6 +43,7 @@ export class NewSigninComponent implements OnInit {
   showAlert: boolean = false;
   email: any = '';
   password: any = '';
+  style: any = '';
 
   /**
    * Constructor
@@ -70,6 +71,8 @@ export class NewSigninComponent implements OnInit {
       // CHANGE THIS VARIABLE TO 'Y' WHEN MOVING TO PRODUCION 
       // CHANGE THIS VARIABLE TO 'N' WHEN IN DEVELOPMENT AND TESTING
       //----------------------------------------------------------------
+      let screenHeight = window.innerHeight;
+      this.style="background-image: url('assets/images/bg.jpg'); background-size: cover; background-color:blue; min-height: "+screenHeight+".px";
       let d = { name: 'sign-in', link: '/sign_in', count: 0, isSmall: 'N', hideNav: 'Y'};
       this._dataService.locationSubject.next(d);
       let production='N'
@@ -84,41 +87,16 @@ export class NewSigninComponent implements OnInit {
           password  : ['', Validators.required],
           rememberMe: ['']
       });
-
-     if (localStorage.getItem('uid')!==undefined) {
-      if (localStorage.getItem('uid')!==null) {
+      localStorage.removeItem('uid');
+//     if (localStorage.getItem('uid')!==undefined) {
+//      if (localStorage.getItem('uid')!==null) {
        //-- Super Admin
-      if (localStorage.getItem('role')=="sadmin") { 
-          this._router.navigateByUrl('/sadmin'); 
-          location.replace('/#/sadmin');
-        }
-      //-- PEO Admnn
-      if (localStorage.getItem('role')=="padmin") { 
-         // location.replace('https://mynuaxess.com/peo/#/sadmin');
-         location.replace('/#/sadmin');
-        }
-      if (localStorage.getItem('role')=="badmin") { 
-          this._router.navigateByUrl('/badmin'); 
-          location.replace('/#/badmin');
-        }
-      if (localStorage.getItem('role')=="broker") { 
-          this._router.navigateByUrl('/badmin'); 
-          location.replace('/#/badmin');
-        }
-      if (localStorage.getItem('role')=="eadmin") { 
-          this._router.navigateByUrl('/eadmin'); 
-          location.replace('/#/eadmin');
-        }
-      if (localStorage.getItem('role')=="employee") { 
-          this._router.navigate(['/dashboard']) 
-          location.replace('/#/dashboard');
-        }
-      if (localStorage.getItem('role')=="user") { 
-          this._router.navigate(['/sadmin']) 
-          location.replace('/#/sadmin');
-        }
-      }
-     }
+//      if (localStorage.getItem('role')=="sadmin") { 
+//          this._router.navigateByUrl('/sadmin'); 
+//          location.replace('/#/sadmin');
+//        }
+//      }
+//     }
     }
 
   }

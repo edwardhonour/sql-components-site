@@ -4773,6 +4773,7 @@ ul.customer-rating li:last-child {
 .card .card-header {
   margin-top: 1rem;
   padding-top: 1.25rem;
+  margin-top: 0px;
 /*  padding: 1rem 1.25rem 0 1rem; */
   background: transparent;
   background-color: #e6e6e6;
