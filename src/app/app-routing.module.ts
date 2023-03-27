@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { RouteParameterResolver } from 'sql-components';
 import { PreviewSectionComponent } from './admin/survey/pages/preview-section/preview-section.component';
 import { PreviewTemplateListComponent } from './admin/survey/pages/preview-template-list/preview-template-list.component';
 import { TemplateDashboardComponent } from './admin/survey/pages/template-dashboard/template-dashboard.component';
@@ -24,7 +25,7 @@ import { TestPageComponent } from './pages/test-page/test-page.component';
 
 const routes: Routes = [
   { path: '', component: LandingPageComponent },
-  { path: 'test/:id/:id2/:id3', component: TestPageComponent, resolve: { parameters: PingResolver } },
+  { path: 'test/:id/:id2/:id3', component: TestPageComponent, resolve: { parameters: RouteParameterResolver } },
   { path: 'assessment-dashboard/:id', component: AssessmentDashboardComponent, resolve: { menudata: MenuResolver, data: DataResolver, userdata: UserResolver }},
   { path: 'assessment-dashboard/:id', component: AssessmentDashboardComponent, resolve: { menudata: MenuResolver, data: DataResolver, userdata: UserResolver }},
   { path: 'stakeholders', component: StakeholderListComponent, resolve: { menudata: MenuResolver, data: DataResolver, userdata: UserResolver } },

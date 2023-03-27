@@ -1,1 +1,51 @@
-<app-stakeholder-contact-list [id]="'1'" [title]="'Contact List'"></app-stakeholder-contact-list>
+<sql-panel 
+     [sql] = "'select * from psp_stakeholder where id = :id'"
+     [use_router] = "'Y'"
+     [id] = "'0'"
+     [id2] = "'0'"
+     [id3] = "'0'"     
+     [card] = "'Y'"
+     [open] = "'Y'"
+     [class] = ""
+     [style] = ""
+     [title] = ""
+     [bs_row] = "'N'"
+     [bs_col] = "''">
+<div header>
+    <h1>Stakeholder</h1>
+    </div>
+    <div footer>
+     <sql-form
+     [id] = "'0'"
+     [id2] = "''"
+     [id3] = "''"
+     [table] = "'psp_stakeholder'"
+     [default_col] = "''"
+     [default_col2] = "''"
+     [default_col3] = "''"
+     [default_value] = "''"
+     [default_value2] = "''"
+     [default_value3] = "''"
+     [embedded] = "'Y'"
+     [card] = "'Y'"
+     [class] = "''"
+     [style] = "''"
+     [title] = "''"
+     [bs_row] = "'Y'"
+     [bs_col] = "'col-sm-12 col-lg-6 col-xl-4'"
+     [handler] = "'default'">
+     <sql-input 
+          [col]= "'org_name'"
+          [class]="''"
+          [style] = "''"
+          [hint] = "''"
+          [label] = "'Label not set'"
+          [placeholder] = "''"
+          [appearance] = "'outline'"
+          [bs_row] = "'Y'"
+          [bs_col] = "'col-12'"
+          [top_label] = "'N'">
+     </sql-input>
+</sql-form>  
+    </div>
+</sql-panel>

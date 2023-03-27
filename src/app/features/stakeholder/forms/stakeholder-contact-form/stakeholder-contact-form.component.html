@@ -38,7 +38,7 @@ contact_uid         int(11)
      [embedded] = "'Y'"
      [card] = "'Y'"
      [default_col]="'stakeholder_id'"
-     [default_value]="'1'"
+     [default_value]="'3'"
      [class] = "''"
      [style] = "''"
      [title] = "'Add/Edit Stakeholder Contacts'"
@@ -253,7 +253,11 @@ contact_uid         int(11)
                [class] = "'btn btn-primary'"
                [style] = "''">
           </sql-submit>
-
+          <pre-insert-trigger 
+               [sql]="'select org_name into :stakeholder_name from psp_stakeholder where id = :stakeholder_id'"
+               [name]="'pre-insert'"
+               [order]="'1'">
+          </pre-insert-trigger>
      </div>
 </div>
 
