@@ -1,8 +1,7 @@
-<span class="font-size:10px;">app-facility-general-info-panel</span>
-<div class="container-fluid m-2">
+<div class="container-fluid">
     <div class="row">
         <div class="col-sm-12">
-            <div class="card" style="margin-top: 20px; margin-bottom: 20px;">
+            <div class="card" style="margin-bottom: 20px;">
                 <div class="card-header">
                     <h2>General Facility Description</h2>
                 </div>
@@ -33,6 +32,49 @@
                             </tbody>
                         </table>                                             
                     </div>
+                </div>
+            </div>
+            <div class="card" style="margin-top:20px;">
+                <div class="card-body">
+                    <sql-form
+                         [id] = "data?.formData?.facility_description_id"
+                         [id2] = "''"
+                         [id3] = "''"
+                         [table] = "'psp_facility_description'"
+                         [default_col] = "'facility_id'"
+                         [default_col2] = "''"
+                         [default_col3] = "''"
+                         [default_value] = "facility_id"
+                         [default_value2] = "''"
+                         [default_value3] = "''"
+                         [embedded] = "'N'"
+                         [card] = "'N'"
+                         [class] = "''"
+                         [style] = "''"
+                         [title] = "''"
+                         [bs_row] = "'N'"
+                         [bs_col] = "''"
+                         [handler] = "'default'">
+                    <sql-editor 
+                         [preview]= "'Y'"
+                         [edit]="'N'"
+                         [col]= "'text'"
+                         [class]="''"
+                         [style] = "''"
+                         [hint] = "''"
+                         [label] = "'Facility Description'"
+                         [placeholder] = "''"
+                         [appearance] = "'outline'"
+                         [bs_row] = "'Y'"
+                         [bs_col] = "''"
+                         [top_label] = "'N'">
+                    </sql-editor>
+                    <sql-submit 
+                         [label] = "'Save Changes'"
+                         [class] = "'btn btn-primary'"
+                         [style] = "''">
+                    </sql-submit>
+                </sql-form>
                 </div>
             </div>
         </div>

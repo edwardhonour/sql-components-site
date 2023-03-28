@@ -3,14 +3,61 @@
         <h2>Facility Description</h2>
     </div>
     <div class="card-body">
-        <div class="editor">
-            <ngx-editor-menu [editor]="editor" [toolbar]="toolbar">
-            </ngx-editor-menu>
-          <ngx-editor [editor]="editor" [(ngModel)]="editordoc" style="height:400px;">
-          </ngx-editor>
+        <div class="row">
+            <div class="col-12">
+                <sql-form
+                [id] = "'13'"
+                [id2] = "''"
+                [id3] = "''"
+                [table] = "'psp_survey_section_comment'"
+                [default_col] = "''"
+                [default_col2] = "''"
+                [default_col3] = "''"
+                [default_value] = "''"
+                [default_value2] = "''"
+                [default_value3] = "''"
+                [embedded] = "'N'"
+                [card] = "'Y'"
+                [class] = "''"
+                [style] = "'width: 100%'"
+                [title] = "''"
+                [bs_row] = "'Y'"
+                [bs_col] = "''"
+                [handler] = "'default'">
+                    <sql-data-select 
+                            [appearance] = "'outline'"
+                            [native] = "'Y'"
+                            [sql] = "'select id, section_name from psp_survey_section where template_id = 1 order by section_name'"
+                            [col] = "'section_id'"
+                            [class] = ""
+                            [style] = ""
+                            [label] = "'Label not set'"
+                            [placeholder] = ""
+                            [bs_row] = "'Y'"
+                            [bs_col] = "''"
+                            [top_label] = "'N'">
+                    </sql-data-select>
+    <sql-editor 
+         [preview]= "'Y'"
+         [edit]="'N'"
+         [col]= "'text'"
+         [class]="''"
+         [style] = "''"
+         [hint] = "''"
+         [label] = "'Label not set'"
+         [placeholder] = "''"
+         [appearance] = "'outline'"
+         [bs_row] = "'Y'"
+         [bs_col] = "''"
+         [top_label] = "'N'">
+    </sql-editor>
+    <sql-submit 
+         [label] = "'Save Changes'"
+         [class] = "'btn btn-primary'"
+         [style] = "''">
+    </sql-submit>
+            </sql-form>
+            </div>
         </div>
-        <button (click)="cl()" class="btn btn-primary">
-            Save Changes
-        </button>
     </div>
 </div>

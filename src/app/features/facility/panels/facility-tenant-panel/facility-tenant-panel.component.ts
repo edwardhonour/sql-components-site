@@ -5,12 +5,13 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { OldFacilityTenantFormComponent } from '../../forms/facility-tenant-form/facility-tenant-form.component';
 import { MatCardModule } from '@angular/material/card';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 
 @Component({
   selector: 'app-facility-tenant-panel',
   standalone: true,
-  imports: [CommonModule, FormsModule, RouterModule, OldFacilityTenantFormComponent, MatCardModule],
+  imports: [CommonModule, FormsModule, RouterModule, OldFacilityTenantFormComponent, MatCardModule, MatCheckboxModule],
   templateUrl: './facility-tenant-panel.component.html',
   styleUrls: ['./facility-tenant-panel.component.css']
 })

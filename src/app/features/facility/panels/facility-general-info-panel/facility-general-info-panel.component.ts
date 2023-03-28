@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { DataService } from '/Users/user/sql-components-site/src/app/data.service';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { SqlEditorComponent, SqlFormComponent, SqlSubmitComponent } from 'sql-components';
 
 @Component({
   selector: 'app-facility-general-info-panel',
   standalone: true,
-  imports: [CommonModule, FormsModule, RouterModule],
+  imports: [CommonModule, FormsModule, RouterModule, SqlFormComponent, SqlEditorComponent, SqlSubmitComponent],
   templateUrl: './facility-general-info-panel.component.html',
   styleUrls: ['./facility-general-info-panel.component.css']
 })

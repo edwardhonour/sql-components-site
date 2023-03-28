@@ -47,6 +47,11 @@ import { FacilityMapPanelComponent } from '../../panels/facility-map-panel/facil
 import { FacilityPropertyTypesComponent } from '../../panels/facility-property-types/facility-property-types.component';
 import { FacilityOverviewComponent } from '../../panels/facility-overview/facility-overview.component'; 
 import { EditFacilityDescriptionEditorComponent } from '../../forms/edit-facility-description-editor/edit-facility-description-editor.component';
+import { SqlCardComponent, SqlMenuComponent } from 'sql-components';
+import { FacilityUtilityDependencyPanelComponent } from '../../panels/facility-utility-dependency-panel/facility-utility-dependency-panel.component';
+import { FacilityTechnologyDependencyPanelComponent } from '../../panels/facility-technology-dependency-panel/facility-technology-dependency-panel.component';
+import { FacilitySecurityForcePanelComponent } from '../../panels/facility-security-force-panel/facility-security-force-panel.component';
+import { FacilitySecurityManagementPanelComponent } from '../../panels/facility-security-management-panel/facility-security-management-panel.component';
 
 @Component({
   selector: 'app-facility-dashboard',
@@ -54,15 +59,15 @@ import { EditFacilityDescriptionEditorComponent } from '../../forms/edit-facilit
   imports: [CommonModule,  VertSideNavComponent, TopMenuPanelComponent, FacilityHistoryPanelComponent,
     RouterModule,  FacilityAssessmentPanelComponent, FacilityIlluminationPanelComponent,
     Ng2SearchPipeModule, FacilityDashboardMenuComponent, FacilityNotesPanelComponent,
-    NgxTablePaginationModule, MatRadioModule, TestGridPanelComponent,
+    NgxTablePaginationModule, MatRadioModule, TestGridPanelComponent, FacilitySecurityForcePanelComponent, FacilitySecurityManagementPanelComponent,
     FacilityGeneralInfoPanelComponent, FacilityFsbPanelComponent, FacilityTenantPanelComponent, FacilityContactsPanelComponent,
     FacilityAssessmentHistoryPanelComponent, FacilityMapPanelComponent, FacilityThreatPanelComponent,
     FacilityAssetsPanelComponent, FacilityBarriersPanelComponent, FacilityBuildingEnvelopePanelComponent,
-    FacilityCrimeStatsPanelComponent, FacilityCyberPanelComponent, FacilityDegradedPanelComponent, 
+    FacilityCrimeStatsPanelComponent, FacilityCyberPanelComponent, FacilityDegradedPanelComponent, FacilityUtilityDependencyPanelComponent, FacilityTechnologyDependencyPanelComponent,
     FacilityEntryControlsPanelComponent, FacilityEssPanelComponent, FacilityHistoryPanelComponent, FacilityIlluminationPanelComponent,
     FacilityLogPanelComponent, FacilityParkingPanelComponent, FacilityTenantPanelComponent, FacilityOverviewComponent,
-    FacilityIncidentPanelComponent, FacilitySaaPanelComponent, FacilityPhotosPanelComponent, FacilityPropertyTypesComponent,
-    FormsModule,  CalendarPanelComponent, TopMenuFacilityDashboardComponent, EditFacilityDescriptionEditorComponent,
+    FacilityIncidentPanelComponent, FacilitySaaPanelComponent, FacilityPhotosPanelComponent, FacilityPropertyTypesComponent, SqlMenuComponent,
+    FormsModule,  CalendarPanelComponent, TopMenuFacilityDashboardComponent, EditFacilityDescriptionEditorComponent, SqlCardComponent,
     FacilityRecommendedPanelComponent, FacilityDegradedPanelComponent],
   templateUrl: './facility-dashboard.component.html',
   styleUrls: ['./facility-dashboard.component.css']
@@ -80,366 +85,22 @@ export class FacilityDashboardComponent implements OnInit, OnDestroy
   email: any;
   user: any;
   facility_id: any = '0';
-showFGD: any = 'N';
-showGFD: any = 'N';
-showFT: any = 'N';
-showOV: any = 'N';
-showFSB: any = 'N';
-showTenants: any = 'N';
-showSAA: any = 'N';
-showHistory: any = 'N';
-showDashboard: any = 'N';
-showRecommended: any = 'N';
-showDegraded: any = 'N';
-showEC: any = 'N';
-showBE: any = 'N';
-showESS: any = 'N';
-showParking: any = 'N';
-showBarriers: any = 'N';
-showIllumination: any = 'N';
-showUD: any = 'N';
-showIncidents: any = 'N';
-showPhotos: any = 'N';
-showDocs: any = 'N';
-showThreat: any = 'N';
-showCrimeStats: any = 'N';
-showContacts: any = 'N';
-showTests: any = 'N';
-showNotes: any = 'N';
-showLog: any = 'N';
-showAssets: any = 'N';
-showAssessments: any = 'Y';
-showMap: any = 'Y';
+  topMenu: string = '0';
+  bottomMenu: string = '0';
 
     closeAll() {
-        this.showMap = 'Y';
-        this.showFGD = 'N';
-        this.showFT = 'N';
-        this.showOV = 'N';
-        this.showGFD = 'N';
-        this.showFSB = 'N';
-        this.showTenants = 'N';
-        this.showSAA = 'N';
-        this.showHistory = 'N';
-        this.showDashboard = 'N';
-        this.showRecommended = 'N';
-        this.showDegraded = 'N';
-        this.showEC = 'N';
-        this.showBE = 'N';
-        this.showESS = 'N';
-        this.showParking = 'N';
-        this.showBarriers = 'N';
-        this.showIllumination = 'N';
-        this.showUD = 'N';
-        this.showIncidents = 'N';
-        this.showPhotos = 'N';
-        this.showDocs = 'N';
-        this.showThreat = 'N';
-        this.showCrimeStats = 'N';
-        this.showContacts = 'N';
-        this.showTests = 'N';
-        this.showNotes = 'N';
-        this.showLog = 'N';
-        this.showAssets = 'N';
-        this.showAssessments = 'N';
+        this.topMenu='0';
+        this.bottomMenu='0';
+    }
+
+    processClick(m: any) {
+        this.topMenu = m.id;
+        console.log(this.topMenu)
     }
 
     openDefault() {
-        this.showAssessments = 'Y';
-        this.showNotes = 'N';
-        this.showFGD = 'N';
-        this.showFT = 'N';
-        this.showOV = 'N';
-        this.showGFD = 'N';
-        this.showFSB = 'N';
-        this.showTenants = 'N';
-        this.showSAA = 'N';
-        this.showHistory = 'N';
-        this.showDashboard = 'N';
-        this.showRecommended = 'N';
-        this.showDegraded = 'N';
-        this.showEC = 'N';
-        this.showBE = 'N';
-        this.showESS = 'N';
-        this.showParking = 'N';
-        this.showBarriers = 'N';
-        this.showIllumination = 'N';
-        this.showUD = 'N';
-        this.showIncidents = 'N';
-        this.showPhotos = 'N';
-        this.showDocs = 'N';
-        this.showThreat = 'N';
-        this.showCrimeStats = 'N';
-        this.showContacts = 'N';
-        this.showTests = 'N';
-        this.showLog = 'N';
-        this.showAssets = 'N';
-        this.showMap = 'N';
-    }
 
-toggleGFD() {
-    if (this.showFGD=='Y') {
-        this.showFGD='N';
-        this.openDefault();
-    } else {
-        this.closeAll();
-        this.showFGD='Y';
     }
-}
-
-toggleFT() {
-    if (this.showFT=='Y') {
-        this.showFT='N';
-        this.openDefault();
-    } else {
-        this.closeAll();
-        this.showFT='Y';
-    }
-}
-
-toggleOV() {
-    if (this.showOV=='Y') {
-        this.showOV='N';
-        this.openDefault();
-    } else {
-        this.closeAll();
-        this.showOV='Y';
-    }
-}
-
-toggleFSB() {
-    if (this.showFSB=='Y') {
-      this.showFSB='N';
-      this.openDefault();
-    } else {
-        this.closeAll();
-      this.showFSB='Y';
-    }
-}
-
-toggleTenants() {
-    if (this.showTenants=='Y') {
-      this.showTenants='N';
-      this.openDefault();
-    } else {
-        this.closeAll();
-      this.showTenants='Y';
-    }
-}
-
-toggleMap() {
-    if (this.showMap=='Y') {
-      this.showMap='N';
-      this.openDefault();
-    } else {
-        this.closeAll();
-      this.showMap='Y';
-    }
-}
-
-
-toggleSAA() {
-    if (this.showSAA=='Y') {
-      this.showSAA='N';
-      this.openDefault();
-    } else {
-        this.closeAll();
-      this.showSAA='Y';
-    }
-}
-
-toggleHistory() {
-    if (this.showHistory=='Y') {
-      this.showHistory='N';
-      this.openDefault();
-    } else {
-        this.closeAll();
-      this.showHistory='Y';
-    }
-}
-
-toggleDashboard() {
-    if (this.showDashboard=='Y') {
-      this.showDashboard='N';
-      this.openDefault();
-    } else {
-        this.closeAll();
-      this.showDashboard='Y';
-    }
-}
-
-toggleRecommended() {
-    if (this.showRecommended=='Y') {
-      this.showRecommended='N';
-      this.openDefault();
-    } else {
-        this.closeAll();
-      this.showRecommended='Y';
-    }
-}
-toggleDegraded() {
-    if (this.showDegraded=='Y') {
-      this.showDegraded='N';
-      this.openDefault();
-    } else {
-        this.closeAll();
-      this.showDegraded='Y';
-    }
-}
-toggleEC() {
-    if (this.showEC=='Y') {
-      this.showEC='N';
-      this.openDefault();
-    } else {
-        this.closeAll();
-      this.showEC='Y';
-    }
-}
-toggleBE() {
-    if (this.showBE=='Y') {
-      this.showBE='N';
-      this.openDefault();
-    } else {
-        this.closeAll();
-      this.showBE='Y';
-    }
-}
-toggleESS() {
-    if (this.showESS=='Y') {
-      this.showESS='N';
-      this.openDefault();
-    } else {
-        this.closeAll();
-      this.showESS='Y';
-    }
-}
-toggleParking() {
-    if (this.showParking=='Y') {
-        this.openDefault();
-      this.showParking='N';
-    } else {
-        this.closeAll();
-      this.showParking='Y';
-    }
-}
-toggleBarriers() {
-    if (this.showBarriers=='Y') {
-        this.openDefault();
-      this.showBarriers='N';
-    } else {
-        this.closeAll();
-      this.showBarriers='Y';
-    }
-}
-toggleIllumination() {
-    if (this.showIllumination=='Y') {
-        this.openDefault();
-      this.showIllumination='N';
-    } else {
-        this.closeAll();
-      this.showIllumination='Y';
-    }
-}
-toggleUD() {
-    if (this.showUD=='Y') {
-        this.openDefault();
-      this.showUD='N';
-    } else {
-        this.closeAll();
-      this.showUD='Y';
-    }
-}
-togglePhotos() {
-    if (this.showPhotos=='Y') {
-        this.openDefault();
-      this.showPhotos='N';
-    } else {
-        this.closeAll();
-      this.showPhotos='Y';
-    }
-}
-toggleDocs() {
-    if (this.showDocs=='Y') {
-        this.openDefault();
-      this.showDocs='N';
-    } else {
-        this.closeAll();
-      this.showDocs='Y';
-    }
-}
-toggleThreat() {
-    if (this.showThreat=='Y') {
-        this.openDefault();
-      this.showThreat='N';
-    } else {
-        this.closeAll();
-      this.showThreat='Y';
-    }
-}
-toggleCrimeStats() {
-    if (this.showCrimeStats=='Y') {
-        this.openDefault();
-      this.showCrimeStats='N';
-    } else {
-        this.closeAll();
-      this.showCrimeStats='Y';
-    }
-}
-
-toggleContacts() {
-    if (this.showContacts=='Y') {
-        this.openDefault();
-      this.showContacts='N';
-    } else {
-        this.closeAll();
-      this.showContacts='Y';
-    }
-}
-
-toggleTests() {
-    if (this.showTests=='Y') {
-        this.openDefault();
-      this.showTests='N';
-    } else {
-        this.closeAll();
-      this.showTests='Y';
-    }
-}
-toggleNotes() {
-    if (this.showNotes=='Y') {
-        this.openDefault();
-      this.showNotes='N';
-    } else {
-        this.closeAll();
-      this.showNotes='Y';
-    }
-}
-toggleLog() {
-    if (this.showLog=='Y') {
-        this.openDefault();
-      this.showLog='N';
-    } else {
-        this.closeAll();
-      this.showLog='Y';
-    }
-}
-
-  toggleFGD() {
-      if (this.showFGD=='Y') {
-        this.openDefault();
-        this.showFGD='N';
-      } else {
-        this.closeAll();
-        this.showFGD='Y';
-      }
-  }
-
-  clickIt(m: any) {
-      console.log(m)
-      if (m=='toggleGFD') {  this.toggleFGD(); }
-      if (m=='toggleFSB') {  this.toggleFSB(); }
-  
-  } 
 
 
   private _unsubscribeAll: Subject<any> = new Subject<any>();
