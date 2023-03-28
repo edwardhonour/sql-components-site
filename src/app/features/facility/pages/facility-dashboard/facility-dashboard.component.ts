@@ -46,6 +46,7 @@ import { FacilityThreatPanelComponent } from '../../panels/facility-threat-panel
 import { FacilityMapPanelComponent } from '../../panels/facility-map-panel/facility-map-panel.component'; 
 import { FacilityPropertyTypesComponent } from '../../panels/facility-property-types/facility-property-types.component';
 import { FacilityOverviewComponent } from '../../panels/facility-overview/facility-overview.component'; 
+import { EditFacilityDescriptionEditorComponent } from '../../forms/edit-facility-description-editor/edit-facility-description-editor.component';
 
 @Component({
   selector: 'app-facility-dashboard',
@@ -61,7 +62,7 @@ import { FacilityOverviewComponent } from '../../panels/facility-overview/facili
     FacilityEntryControlsPanelComponent, FacilityEssPanelComponent, FacilityHistoryPanelComponent, FacilityIlluminationPanelComponent,
     FacilityLogPanelComponent, FacilityParkingPanelComponent, FacilityTenantPanelComponent, FacilityOverviewComponent,
     FacilityIncidentPanelComponent, FacilitySaaPanelComponent, FacilityPhotosPanelComponent, FacilityPropertyTypesComponent,
-    FormsModule,  CalendarPanelComponent, TopMenuFacilityDashboardComponent,
+    FormsModule,  CalendarPanelComponent, TopMenuFacilityDashboardComponent, EditFacilityDescriptionEditorComponent,
     FacilityRecommendedPanelComponent, FacilityDegradedPanelComponent],
   templateUrl: './facility-dashboard.component.html',
   styleUrls: ['./facility-dashboard.component.css']

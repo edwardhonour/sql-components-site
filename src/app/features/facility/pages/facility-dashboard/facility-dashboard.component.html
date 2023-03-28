@@ -28,41 +28,52 @@
                                         </div>
                                         <div class="card-body">
                                                 <div class="row">
-                                                    <ul class="list-group list-group-flush" style="width: 100% !important;;">
+                                                    <ul class="list-group list-group-flush" style="width: 100% !important;">
+                                                    <li class="list-group-item" style="background-color: lightgray;">Facility Background</li>
                                                     <li *ngIf="showFGD=='N'" (click)="toggleGFD()" class="list-group-item">General Facility Description</li>
                                                     <li *ngIf="showFGD=='Y'" (click)="toggleGFD()" class="list-group-item active">General Facility Description</li>
-                                                    <li *ngIf="showFT=='N'" (click)="toggleFT()" class="list-group-item">Property Type(s)</li>
-                                                    <li *ngIf="showFT=='Y'" (click)="toggleFT()" class="list-group-item active">Property Type(s)</li>
-                                                    <li *ngIf="showSAA=='N'" (click)="toggleSAA()" class="list-group-item">Significant Areas & Assets</li>
-                                                    <li *ngIf="showSAA=='Y'"  (click)="toggleSAA()" class="list-group-item active">Significant Areas & Assets</li>
-                                                    <li *ngIf="showOV=='N'" (click)="toggleOV()" class="list-group-item">Facility Threat Background</li>
-                                                    <li *ngIf="showOV=='Y'" (click)="toggleOV()" class="list-group-item active">Facility Threat Backgruond</li>
-                                                    <li *ngIf="showFSB=='N'" (click)="toggleFSB()" class="list-group-item">Facility Security Background</li>
-                                                    <li *ngIf="showFSB=='Y'"  (click)="toggleFSB()" class="list-group-item active">Facility Security Background</li>
+                                                    <li *ngIf="showFSB=='N'" (click)="toggleFSB()" class="list-group-item">Physical Security Background</li>
+                                                    <li *ngIf="showFSB=='Y'"  (click)="toggleFSB()" class="list-group-item active">Physical Security Background</li>
                                                     <li *ngIf="showTenants=='N'" (click)="toggleTenants()" class="list-group-item">Facility Tenants</li>
                                                     <li *ngIf="showTenants=='Y'"  (click)="toggleTenants()" class="list-group-item active">Facility Tenants</li>
-                                                    <li *ngIf="showThreat=='N'" (click)="toggleThreat()" class="list-group-item">Threat Profile</li>
-                                                    <li *ngIf="showThreat=='Y'"  (click)="toggleThreat()" class="list-group-item active">Threat Profile</li>
-                                                    <li *ngIf="showHistory=='N'" (click)="toggleHistory()" class="list-group-item">Assessment History</li>
-                                                    <li *ngIf="showHistory=='Y'"  (click)="toggleHistory()" class="list-group-item active">Assessment History
-                                                    <li *ngIf="showRecommended=='N'" (click)="toggleRecommended()" class="list-group-item">Recommended Countermeasures</li>
-                                                    <li *ngIf="showRecommended=='Y'"  (click)="toggleRecommended()" class="list-group-item active">Recommended Countermeasures</li>
-                                                    <li *ngIf="showDegraded=='N'" (click)="toggleDegraded()" class="list-group-item">Degraded Countermeasures</li>
-                                                    <li *ngIf="showDegraded=='Y'"  (click)="toggleDegraded()" class="list-group-item active">Degraded Countermeasures</li>
-                                                    <li *ngIf="showEC=='N'" (click)="toggleEC()" class="list-group-item">Entry Controls</li>
-                                                    <li *ngIf="showEC=='Y'"  (click)="toggleEC()" class="list-group-item active">Entry Controls</li>
+                                                    <li *ngIf="showSAA=='N'" (click)="toggleSAA()" class="list-group-item">Significant Areas</li>
+                                                    <li *ngIf="showSAA=='Y'"  (click)="toggleSAA()" class="list-group-item active">Significant Areas</li>
+                                                    <li *ngIf="showSAA=='N'" (click)="toggleSAA()" class="list-group-item">Exterior Barriers</li>
+                                                    <li *ngIf="showSAA=='Y'"  (click)="toggleSAA()" class="list-group-item active">Exterior Barriers</li>
+                                                    <li *ngIf="showSAA=='N'" (click)="toggleSAA()" class="list-group-item">Parking, Delivery & Dropoff</li>
+                                                    <li *ngIf="showSAA=='Y'"  (click)="toggleSAA()" class="list-group-item active">Parking, Delivery & Dropoff</li>
                                                     <li *ngIf="showBE=='N'" (click)="toggleBE()" class="list-group-item">Building Envelope</li>
                                                     <li *ngIf="showBE=='Y'"  (click)="toggleBE()" class="list-group-item active">Building Envelope</li>
-                                                    <li *ngIf="showESS=='N'" (click)="toggleESS()" class="list-group-item">Electronic Security Systems</li>
-                                                    <li *ngIf="showESS=='Y'"  (click)="toggleESS()" class="list-group-item active">Electronic Security Systems</li>
-                                                    <li *ngIf="showParking=='N'" (click)="toggleParking()" class="list-group-item">Parking</li>
-                                                    <li *ngIf="showParking=='Y'"  (click)="toggleParking()" class="list-group-item active">Parking</li>
-                                                    <li *ngIf="showBarriers=='N'" (click)="toggleBarriers()" class="list-group-item">Barriers</li>
-                                                    <li *ngIf="showBarriers=='Y'"  (click)="toggleBarriers()" class="list-group-item active">Barriers</li>
-                                                    <li *ngIf="showIllumination=='N'" (click)="toggleIllumination()" class="list-group-item">Illumination</li>
-                                                    <li *ngIf="showIllumination=='Y'"  (click)="toggleIllumination()" class="list-group-item active">Illumination</li>
-                                                    <li *ngIf="showUD=='N'" (click)="toggleUD()" class="list-group-item">Utility Dependencies</li>
-                                                    <li *ngIf="showUD=='Y'"  (click)="toggleUD()" class="list-group-item active">Utility Dependencies</li>
+                                                    <li *ngIf="showEC=='N'" (click)="toggleEC()" class="list-group-item">Entry Controls</li>
+                                                    <li *ngIf="showEC=='Y'"  (click)="toggleEC()" class="list-group-item active">Entry Controls</li>
+                                                    <li *ngIf="showEC=='N'" (click)="toggleEC()" class="list-group-item">Utility Dependencies</li>
+                                                    <li *ngIf="showEC=='Y'"  (click)="toggleEC()" class="list-group-item active">Utility Dependenvies</li>
+                                                    <li *ngIf="showEC=='N'" (click)="toggleEC()" class="list-group-item">Technology Dependencies</li>
+                                                    <li *ngIf="showEC=='Y'"  (click)="toggleEC()" class="list-group-item active">Technology Depedencies</li>
+                                                    <li *ngIf="showEC=='N'" (click)="toggleEC()" class="list-group-item">Security Force</li>
+                                                    <li *ngIf="showEC=='Y'"  (click)="toggleEC()" class="list-group-item active">Security Force</li>
+                                                    <li *ngIf="showEC=='N'" (click)="toggleEC()" class="list-group-item">Security Management</li>
+                                                    <li *ngIf="showEC=='Y'"  (click)="toggleEC()" class="list-group-item active">Security Management</li>
+                                                    <li *ngIf="showEC=='N'" (click)="toggleEC()" class="list-group-item">Electronic Security Systems</li>
+                                                    <li *ngIf="showEC=='Y'"  (click)="toggleEC()" class="list-group-item active">Electronic Security Systems</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                    </div>
+
+                                    <div class="card" style="margin-top: 20px; margin-bottom: 20px;">
+                                        <div class="card-header">
+                                            <h2>Facility Background</h2>
+                                        </div>
+                                        <div class="card-body">
+                                                <div class="row">
+                                                    <ul class="list-group list-group-flush" style="width: 100% !important;">
+                                                    <li *ngIf="showHistory=='N'" (click)="toggleHistory()" class="list-group-item">Assessment History</li>
+                                                     <li *ngIf="showHistory=='Y'"  (click)="toggleHistory()" class="list-group-item active">Assessment History</li>
+                                                    <li *ngIf="showThreat=='N'" (click)="toggleThreat()" class="list-group-item">Security Assets</li>
+                                                    <li *ngIf="showThreat=='Y'"  (click)="toggleThreat()" class="list-group-item active">Security Assets</li> 
+<                                                   <li *ngIf="showRecommended=='N'" (click)="toggleRecommended()" class="list-group-item">Recommendations</li>
+                                                    <li *ngIf="showRecommended=='Y'"  (click)="toggleRecommended()" class="list-group-item active">Recommendations</li>
                                                     <li *ngIf="showPhotos=='N'" (click)="togglePhotos()" class="list-group-item">Photos</li>
                                                     <li *ngIf="showPhotos=='Y'"  (click)="togglePhotos()" class="list-group-item active">Photos</li>
                                                     <li *ngIf="showDocs=='N'" (click)="toggleDocs()" class="list-group-item">Documents</li>
@@ -75,8 +86,6 @@
                                                     <li *ngIf="showTests=='Y'"  (click)="toggleTests()" class="list-group-item active">Functionality Tests</li>
                                                     <li *ngIf="showNotes=='N'" (click)="toggleNotes()" class="list-group-item">Facility Notes</li>
                                                     <li *ngIf="showNotes=='Y'" (click)="toggleNotes()" class="list-group-item active">Facility Notes</li>
-                                                    <li *ngIf="showLog=='N'" (click)="toggleLog()" class="list-group-item">Facility Change Log</li>
-                                                    <li *ngIf="showLog=='Y'" (click)="toggleLog()" class="list-group-item active">Facility Change Log</li>
                                                     </ul>
                                                 </div>
                                         </div>
@@ -214,6 +223,11 @@
                         <div *ngIf="showMap=='Y'" class="row">
                             <div class="col-12">
                                 <app-facility-map-panel [facility_id]="data?.formData?.id"></app-facility-map-panel>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 p-2">
+                                <app-edit-facility-description-editor></app-edit-facility-description-editor>
                             </div>
                         </div>
                     </div>
