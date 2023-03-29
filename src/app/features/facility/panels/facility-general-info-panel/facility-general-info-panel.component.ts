@@ -3,12 +3,12 @@ import { CommonModule } from '@angular/common';
 import { DataService } from '/Users/user/sql-components-site/src/app/data.service';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { SqlEditorComponent, SqlFormComponent, SqlSubmitComponent } from 'sql-components';
+import { PostInsertTriggerComponent, SQLDataService, SqlEditorComponent, SqlFormComponent, SqlSubmitComponent, SqlComponentsModule } from 'sql-components';
 
 @Component({
   selector: 'app-facility-general-info-panel',
   standalone: true,
-  imports: [CommonModule, FormsModule, RouterModule, SqlFormComponent, SqlEditorComponent, SqlSubmitComponent],
+  imports: [CommonModule, FormsModule, RouterModule, SqlFormComponent, SqlEditorComponent, SqlSubmitComponent, PostInsertTriggerComponent],
   templateUrl: './facility-general-info-panel.component.html',
   styleUrls: ['./facility-general-info-panel.component.css']
 })
@@ -31,7 +31,8 @@ export class FacilityGeneralInfoPanelComponent implements OnChanges, OnInit {
   }
 
 constructor(
-private _dataService: DataService
+private _dataService: DataService,
+private _sqldataService: SQLDataService
 ) { }
 
 postUpdate() {
@@ -64,6 +65,10 @@ getForm() {
   }
   this._dataService.postForm("get-facility-assessments", inputForm).subscribe((data:any)=>{
     this.data=data;
+    let parameters = { page: 'stakeholders', id: this.data.formData.facility_description_id, id2: 0, id3: 0 };
+    this._sqldataService.paramSubject.next(parameters)
+    this._sqldataService.containerSubject.next(parameters)
+    console.log(this.data)
   });
 }
 

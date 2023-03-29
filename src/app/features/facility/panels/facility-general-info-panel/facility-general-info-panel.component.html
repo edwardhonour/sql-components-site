@@ -37,6 +37,7 @@
             <div class="card" style="margin-top:20px;">
                 <div class="card-body">
                     <sql-form
+                         [embedded]="'Y'"
                          [id] = "data?.formData?.facility_description_id"
                          [id2] = "''"
                          [id3] = "''"
@@ -47,7 +48,6 @@
                          [default_value] = "facility_id"
                          [default_value2] = "''"
                          [default_value3] = "''"
-                         [embedded] = "'N'"
                          [card] = "'N'"
                          [class] = "''"
                          [style] = "''"
@@ -74,6 +74,8 @@
                          [class] = "'btn btn-primary'"
                          [style] = "''">
                     </sql-submit>
+                <post-insert-trigger
+                   [sql] = "'update psp_facility set facility_description_id = :id where id = :facility_id'"></post-insert-trigger>
                 </sql-form>
                 </div>
             </div>
