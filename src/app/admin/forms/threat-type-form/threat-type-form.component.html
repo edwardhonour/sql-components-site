@@ -1,0 +1,88 @@
+<sql-form
+ [id] = "'0'"
+ [id2] = "''"
+ [id3] = "''"
+ [table] = "'psp_threat_type'"
+ [default_col] = "''"
+ [default_col2] = "''"
+ [default_col3] = "''"
+ [default_value] = "''"
+ [default_value2] = "''"
+ [default_value3] = "''"
+ [embedded] = "'Y'"
+ [card] = "'Y'"
+ [class] = "''"
+ [style] = "''"
+ [title] = "''"
+ [bs_row] = "'N'"
+ [bs_col] = "''"
+ [handler] = "'default'">
+
+ <!--
+ id int(11)
+ create_timestamp datetime
+ threat_id int(11)
+ threat_name varchar(80)
+ -->
+
+ <div class="row"> 
+    <!-- Left Column -->
+    <div class="col-sm-12 col-lg-6 col-xl-3"> 
+       <sql-input 
+        [col]= "'threat_id'"
+        [class]="''"
+        [style] = "'width:400px;'"
+        [hint] = "''"
+        [label] = "'Threat Id'"
+        [placeholder] = "''"
+        [appearance] = "'outline'"
+        [bs_row] = "'N'"
+        [bs_col] = "''"
+        [top_label] = "'N'">
+       </sql-input>
+
+    </div>
+    <!-- Center Column -->
+    <div class="col-sm-12 col-lg-6 col-xl-3"> 
+ 
+        <sql-input 
+         [col]= "'threat_name'"
+         [class]="''"
+         [style] = "'width:400px;'"
+         [hint] = "''"
+         [label] = "'Threat Name'"
+         [placeholder] = "''"
+         [appearance] = "'outline'"
+         [bs_row] = "'N'"
+         [bs_col] = "''"
+         [top_label] = "'N'">
+        </sql-input>
+
+    </div>
+    <!-- Right Column -->
+    <div class="col-sm-12 col-lg-6 col-xl-3"> 
+       
+        <sql-datepicker 
+         [col] = "'create_timestamp'"
+         [class] = "''"
+         [style] = "''"
+         [hint] = "''"
+         [icon] = "''"
+         [label] = "'Create Date'"
+         [placeholder] = "''"
+         [appearance] = "'outline'"
+         [bs_row] = "'N'"
+         [bs_col] = "''"
+         [top_label] = "'N'"></sql-datepicker>
+
+    </div>
+
+    <sql-submit 
+     [label] = "'Save Changes'"
+     [class] = "'btn btn-primary'"
+     [style] = "''">
+    </sql-submit>
+
+ </div>
+
+</sql-form>

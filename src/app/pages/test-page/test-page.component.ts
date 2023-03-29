@@ -4,11 +4,13 @@ import { StakeholderContactListComponent } from 'src/app/features/stakeholder/pa
 import { StakeholderContactFormComponent } from 'src/app/features/stakeholder/forms/stakeholder-contact-form/stakeholder-contact-form.component';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { SqlFormComponent, SqlInputComponent, SqlPanelComponent } from 'sql-components';
+import { ThreatTypeFormComponent } from 'src/app/admin/forms/threat-type-form/threat-type-form.component';
+import { ThreatTypePanelComponent } from 'src/app/admin/panels/threat-type-panel/threat-type-panel.component';
 
 @Component({
   selector: 'app-test-page',
   standalone: true,
-  imports: [CommonModule, StakeholderContactListComponent, StakeholderContactFormComponent, RouterModule, 
+  imports: [CommonModule, StakeholderContactListComponent, StakeholderContactFormComponent, RouterModule, ThreatTypeFormComponent, ThreatTypePanelComponent,
             SqlPanelComponent, SqlFormComponent, SqlInputComponent],
   templateUrl: './test-page.component.html',
   styleUrls: ['./test-page.component.css']
