@@ -11,6 +11,8 @@ import {
   ApexXAxis,
   ApexPlotOptions
 } from "ng-apexcharts";
+import { MatCheckbox, MatCheckboxModule } from '@angular/material/checkbox';
+import { MatCardMdImage, MatCardModule } from '@angular/material/card';
 
 export type ChartOptions = {
   series: ApexAxisChartSeries;
@@ -23,7 +25,7 @@ export type ChartOptions = {
 @Component({
   selector: 'app-facility-building-envelope-panel',
   standalone: true,
-  imports: [CommonModule, FormsModule, RouterModule],
+  imports: [CommonModule, FormsModule, RouterModule, MatCheckboxModule, MatCardModule],
   templateUrl: './facility-building-envelope-panel.component.html',
   styleUrls: ['./facility-building-envelope-panel.component.css']
 })

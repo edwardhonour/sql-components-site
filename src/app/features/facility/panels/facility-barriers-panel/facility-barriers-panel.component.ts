@@ -3,11 +3,14 @@ import { CommonModule } from '@angular/common';
 import { DataService } from '/Users/user/sql-components-site/src/app/data.service';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatCardModule } from '@angular/material/card';
+import { SqlComponentsModule } from 'sql-components';
 
 @Component({
   selector: 'app-facility-barriers-panel',
   standalone: true,
-  imports: [CommonModule, FormsModule, RouterModule],
+  imports: [CommonModule, FormsModule, RouterModule, MatCheckboxModule, MatCardModule, SqlComponentsModule],
   templateUrl: './facility-barriers-panel.component.html',
   styleUrls: ['./facility-barriers-panel.component.css']
 })

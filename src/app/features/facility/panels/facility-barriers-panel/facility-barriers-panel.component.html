@@ -1,14 +1,72 @@
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="card" style="margin-bottom: 20px;">
-                <div class="card-header">
-                    <h2>Exterior Barriers</h2>
-                </div>
-                <div class="card-body">
-                        No Barriers Found
-                </div>
-            </div>
-        </div>
-    </div>
-</div>    
+<div class="row">
+    <div class="col-sm-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h2>Barriers</h2>
+                            </div>
+                            <div class="card-body">
+                                <mat-card style="margin-bottom: 20px;">
+                                    <mat-card-title  style="padding:20px;"><h2>Does the Facility have a High Speed Avenue of Approach?</h2></mat-card-title>
+                                    <mat-card-content>    
+                                        <div class="row">
+                                            <div class="col-sm-2"></div>
+                                            <div class="col-sm-4">
+                                                <sql-radio-group 
+                                                [appearance] = "'outline'"
+                                                [inline] = "'N'"
+                                                [sql] = "'select value, title from sql_yn'"
+                                                [handler] = "''"
+                                                [col] = "''"
+                                                [class] = "''"
+                                                [style] = "''"
+                                                [hint] = "''"
+                                                [icon] = "''"
+                                                [label] = "''"
+                                                [placeholder] = "''"
+                                                [bs_row] = "'Y'"
+                                                [bs_col] = "'col-12'"
+                                                [top_label] = "'N'"></sql-radio-group>
+                                            </div>
+                                        </div>
+
+
+                                    </mat-card-content>
+                                </mat-card>
+                                <mat-card style="margin-bottom: 20px;">
+                                    <mat-card-title  style="padding:20px;"><h2>Barrier Types in Place - Choose all that apply</h2></mat-card-title>
+                                    <mat-card-content>                 
+                                        <div class="row">
+                                            <div class="col-sm-2"></div>
+                                            <div class="col-sm-4"><mat-checkbox value="1">Vehicle Gates</mat-checkbox></div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-2"></div>
+                                            <div class="col-sm-4"><mat-checkbox value="1">Parking Areas</mat-checkbox></div>
+                                        </div>                                        
+                                        <div class="row">
+                                             <div class="col-sm-2"></div>
+                                             <div class="col-sm-4"><mat-checkbox value="1">Pedestrian Gates</mat-checkbox></div>
+                                        </div> 
+                                        <div class="row">
+                                            <div class="col-sm-2"></div>
+                                            <div class="col-sm-4"><mat-checkbox value="1">Critical Areas / Utilities</mat-checkbox></div>
+                                       </div> 
+                                          
+                                    </mat-card-content>
+                                </mat-card>
+</div>
+
+                                
+                            </div>
+
+
+
+
+
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-2"></div>
+                            <div class="col-sm-10"><button class="btn btn-primary">Mark Complete</button></div>
+                        </div> 
+                    </div>
+

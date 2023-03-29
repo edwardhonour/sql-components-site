@@ -3,11 +3,14 @@ import { CommonModule } from '@angular/common';
 import { DataService } from '/Users/user/sql-components-site/src/app/data.service';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { MatCardModule } from '@angular/material/card';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { SqlComponentsModule } from 'sql-components';
 
 @Component({
   selector: 'app-facility-parking-panel',
   standalone: true,
-  imports: [CommonModule, FormsModule, RouterModule],
+  imports: [CommonModule, FormsModule, RouterModule, MatCardModule, MatCheckboxModule, SqlComponentsModule],
   templateUrl: './facility-parking-panel.component.html',
   styleUrls: ['./facility-parking-panel.component.css']
 })
