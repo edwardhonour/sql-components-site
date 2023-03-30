@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { RouteParameterResolver } from 'sql-components';
+import { FacilitySaaTypePanelComponent } from './admin/panels/facility-saa-type-panel/facility-saa-type-panel.component';
+import { ThreatTypePanelComponent } from './admin/panels/threat-type-panel/threat-type-panel.component';
 import { PreviewSectionComponent } from './admin/survey/pages/preview-section/preview-section.component';
 import { PreviewTemplateListComponent } from './admin/survey/pages/preview-template-list/preview-template-list.component';
 import { TemplateDashboardComponent } from './admin/survey/pages/template-dashboard/template-dashboard.component';
@@ -18,6 +20,7 @@ import { SurveyListComponent } from './features/assessment/pages/survey-list/sur
 import { SurveySectionComponent } from './features/assessment/pages/survey-section/survey-section.component';
 import { FacilityDashboardComponent } from './features/facility/pages/facility-dashboard/facility-dashboard.component';
 import { FacilityListComponent } from './features/facility/pages/facility-list/facility-list.component';
+import { FacilityPropertyTypesComponent } from './features/facility/panels/facility-property-types/facility-property-types.component';
 import { StakeholderDashboardComponent } from './features/stakeholder/pages/stakeholder-dashboard/stakeholder-dashboard.component';
 import { StakeholderListComponent } from './features/stakeholder/pages/stakeholder-list/stakeholder-list.component';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
@@ -58,7 +61,9 @@ const routes: Routes = [
   { path: 'enroll', component: UserEnrollComponent, resolve: { data: DataResolver }, },
   { path: 'user-logout', component: UserLogoutComponent },
   { path: 'enroll/:id', component: UserEnrollComponent },
-  { path: 'enroll', component: UserEnrollComponent }
+  { path: 'enroll', component: UserEnrollComponent },
+  { path: 'saa-types', component: FacilitySaaTypePanelComponent },
+  { path: 'threat-types', component: ThreatTypePanelComponent }
 ];
 
 @NgModule({

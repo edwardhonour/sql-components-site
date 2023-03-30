@@ -1,0 +1,40 @@
+<!--
+id int(11)
+create_timestamp datetime
+saa_type varchar(80)
+property_type_id int(11)
+default_order int(11)
+-->
+<!--
+id int(11)
+create_timestamp datetime
+property_type varchar(80)
+-->
+<sql-add-table 
+  [title]="'Facility SAA Types'"
+  [sql]="'select psp_saa_type.id as id, saa_type, property_type_id, property_type from psp_saa_type, psp_property_type where psp_saa_type.property_type_id = psp_property_type.id union select id, saa_type, property_type_id, \'All Facilities\' as property_type from psp_saa_type where property_type_id = 0 order by 4'"
+  [card] = "'Y'"
+  [card_class] = "''"
+  [card_style] = "''"
+  [container_class] = "'container-fluid m-2 p-2'"
+  [container_style] = "''"
+  [search] = "'TOP'"
+  [bs_row] = "'N'"
+  [bs_col] = "''"
+  [table_class] = "'table table-striped table-condensed'"
+  [table_style] = "''"
+  [title] = "'Facility SAA Types'"
+  [pagination] = "'Y'"
+  [pagesize] = 25
+  [id] = "'0'"
+  [open] = "'Y'"
+  [class] = "'table table-striped table-condensed'"
+  [style] = "''"
+  [handler] = "'default'">
+ <th #column id="id">ID</th>
+ <th #column id="saa_type">SAA Type</th>
+ <th #column id="property_type">Property Type</th>
+  <div form>
+      <app-facility-saa-type-form></app-facility-saa-type-form>
+  </div>
+</sql-add-table>
