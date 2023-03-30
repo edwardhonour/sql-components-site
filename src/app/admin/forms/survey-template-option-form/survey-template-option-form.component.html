@@ -1,0 +1,265 @@
+<!--
+id int(11)
+create_timestamp datetime
+section_id int(11)
+parent_id int(11)
+option_text varchar(240)
+option_type varchar(40)
+option_group int(11)
+option_order int(11)
+third_person_text varchar(180)
+help_text varchar(2000)
+validation_text varchar(2000)
+height varchar(20)
+width varchar(20)
+template_id int(11)
+option_id int(11)
+-->
+<sql-form
+ [id] = "'0'"
+ [id2] = "''"
+ [id3] = "''"
+ [table] = "'psp_template_option'"
+ [default_col] = "''"
+ [default_col2] = "''"
+ [default_col3] = "''"
+ [default_value] = "''"
+ [default_value2] = "''"
+ [default_value3] = "''"
+ [embedded] = "'Y'"
+ [card] = "'Y'"
+ [class] = "''"
+ [style] = "''"
+ [title] = "''"
+ [bs_row] = "'N'"
+ [bs_col] = "''"
+ [handler] = "'default'">
+ <div class="row"> 
+  <!-- Left Column -->
+  <div class="col-sm-12 col-lg-6 col-xl-3"> 
+    <div class="row">
+      <div class="col-12">
+        <sql-input 
+        [col]= "''"
+        [class]="'id'"
+        [style] = "'width:400px;'"
+        [hint] = "''"
+        [label] = "'ID'"
+        [placeholder] = "''"
+        [appearance] = "'outline'"
+        [bs_row] = "'Y'"
+        [bs_col] = "'col-12'"
+        [top_label] = "'N'">
+       </sql-input>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <sql-data-select 
+        [appearance] = "'outline'"
+        [native] = "'Y'"
+        [sql] = "'select id, template_name from psp_template'"
+        [col] = "'template_id'"
+        [class] = "''"
+        [style] = "''"
+        [label] = "'Template'"
+        [placeholder] = "''"
+        [bs_row] = "'N'"
+        [bs_col] = "''"
+        [top_label] = "'N'">
+        </sql-data-select>        
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <sql-data-select 
+        [appearance] = "'outline'"
+        [native] = "'Y'"
+        [sql] = "'select id, section_name from psp_template_section order by section_order'"
+        [col] = "'section_id'"
+        [class] = "''"
+        [style] = "''"
+        [label] = "'Section'"
+        [placeholder] = "''"
+        [bs_row] = "'Y'"
+        [bs_col] = "''"
+        [top_label] = "'N'">
+        </sql-data-select>        
+      </div>
+    </div>
+    <div class="row"> 
+     <div class="col-12"> 
+    <sql-input 
+     [col]= "'parent_id'"
+     [class]="''"
+     [style] = "'width:400px;'"
+     [hint] = "''"
+     [label] = "'Parent'"
+     [placeholder] = "''"
+     [appearance] = "'outline'"
+     [bs_row] = "'N'"
+     [bs_col] = "''"
+     [top_label] = "'N'">
+    </sql-input>
+     </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <sql-input 
+         [col]= "'option_id'"
+         [class]="''"
+         [style] = "'width:400px;'"
+         [hint] = "''"
+         [label] = "'Option ID'"
+         [placeholder] = "''"
+         [appearance] = "'outline'"
+         [bs_row] = "''"
+         [bs_col] = "''"
+         [top_label] = "'N'">
+        </sql-input>
+      </div>
+    </div>
+  </div>
+  <!-- Center Column -->
+  <div class="col-sm-12 col-lg-6 col-xl-3"> 
+    <div class="row">
+      <div class="col-12">
+            <sql-textarea 
+            [rows] = "'5'"
+            [maxrows] = "'10'"
+            [col]= "'option_name'"
+            [class]=""
+            [style] = ""
+            [hint] = "''"
+            [label] = "'Option Text'"
+            [placeholder] = "''"
+            [appearance] = "'outline'"
+            [bs_row] = "'N'"
+            [bs_col] = "''"
+            [top_label] = "'N'">
+            </sql-textarea>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <sql-data-select 
+        [appearance] = "'outline'"
+        [native] = "'Y'"
+        [sql] = "'select title as a, title from psp_option_type'"
+        [col] = "'option_type'"
+        [class] = "''"
+        [style] = "''"
+        [label] = "'Option Type'"
+        [placeholder] = "''"
+        [bs_row] = "'Y'"
+        [bs_col] = "''"
+        [top_label] = "'N'">
+        </sql-data-select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <sql-input 
+         [col]= "'option_group'"
+         [class]="''"
+         [style] = "'width:400px;'"
+         [hint] = "''"
+         [label] = "'Option Group'"
+         [placeholder] = "''"
+         [appearance] = "'outline'"
+         [bs_row] = "'N'"
+         [bs_col] = "''"
+         [top_label] = "'N'">
+        </sql-input>
+      </div>
+    </div>
+    <div class="row"> 
+     <div class="col-12"> 
+         <sql-input 
+          [col]= "'option_order'"
+          [class]="''"
+          [style] = "'width:400px;'"
+          [hint] = "''"
+          [label] = "'Option Order'"
+          [placeholder] = "''"
+          [appearance] = "'outline'"
+          [bs_row] = "'N'"
+          [bs_col] = "''"
+          [top_label] = "'N'">
+         </sql-input>
+     </div>
+    </div>
+  </div>
+  <!-- Right Column -->
+  <div class="col-sm-12 col-lg-6 col-xl-3"> 
+      <div class="row"> 
+       <div class="col-12"> 
+              <sql-textarea 
+              [rows] = "'5'"
+              [maxrows] = "'10'"
+              [col]= "'help_text'"
+              [class]="''"
+              [style] = "''"
+              [hint] = "''"
+              [label] = "'Help Text'"
+              [placeholder] = "''"
+              [appearance] = "'outline'"
+              [bs_row] = "'N'"
+              [bs_col] = "''"
+              [top_label] = "'N'">
+              </sql-textarea>
+       </div>
+      </div>
+      <div class="row"> 
+       <div class="col-12"> 
+      <sql-textarea 
+      [rows] = "'5'"
+      [maxrows] = "'10'"
+      [col]= "'third_person_text'"
+      [class]="''"
+      [style] = "''"
+      [hint] = "''"
+      [label] = "'Third Person Text'"
+      [placeholder] = "''"
+      [appearance] = "'outline'"
+      [bs_row] = "'N'"
+      [bs_col] = "''"
+      [top_label] = "'N'">
+      </sql-textarea>
+       </div>
+      </div>
+      <div class="row"> 
+       <div class="col-12"> 
+      <sql-textarea 
+      [rows] = "'5'"
+      [maxrows] = "'10'"
+      [col]= "'hint'"
+      [class]="''"
+      [style] = "''"
+      [hint] = "''"
+      [label] = "'Hint'"
+      [placeholder] = "''"
+      [appearance] = "'outline'"
+      [bs_row] = "'N'"
+      [bs_col] = "''"
+      [top_label] = "'N'">
+      </sql-textarea>
+       </div>
+      </div>
+      <div class="row"> 
+       <div class="col-12"> 
+      <sql-submit 
+       [label] = "'Save Changes'"
+       [class] = "'btn btn-primary'"
+       [style] = "''">
+      </sql-submit>
+      <sql-delete 
+       [label] = "'Delete Record'"
+       [class] = "'btn btn-danger'"
+       [style] = "''">
+      </sql-delete>
+       </div>
+      </div>
+  </div>
+ </div>
+</sql-form>

@@ -1,0 +1,50 @@
+<!--
+id int(11)
+create_timestamp datetime
+section_id int(11)
+parent_id int(11)
+option_text varchar(240)
+option_type varchar(40)
+option_group int(11)
+option_order int(11)
+third_person_text varchar(180)
+help_text varchar(2000)
+validation_text varchar(2000)
+height varchar(20)
+width varchar(20)
+template_id int(11)
+option_id int(11)
+-->
+<sql-add-table 
+ [title]="'No Title Defined'"
+ [sql]="'select id, template_id, section_id, parent_id, option_order, option_id, option_group, option_text from psp_template_option order by 2,3,5'"
+ [card] = "'Y'"
+ [card_class] = "''"
+ [card_style] = "''"
+ [container_class] = "'container-fluid m-2 p-2'"
+ [container_style] = "''"
+ [search] = "'TOP'"
+ [bs_row] = "'N'"
+ [bs_col] = "''"
+ [table_class] = "'table table-striped table-condensed'"
+ [table_style] = "''"
+ [title] = "'Survey Options'"
+ [pagination] = "'Y'"
+ [pagesize] = 25
+ [id] = "'0'"
+ [open] = "'Y'"
+ [class] = "'table table-striped table-condensed'"
+ [style] = "''"
+ [handler] = "'default'">
+ <th #column id="id">ID</th>
+ <th #column id="template_id">Template</th>
+ <th #column id="section_id">Section</th>
+ <th #column id="parent_id">Parent</th>
+ <th #column id="option_id">Option ID</th>
+ <th #column id="option_group">Option Group</th>
+ <th #column id="option_order">Option Order</th>
+ <th #column id="Option Text">Text</th>
+ <div form>
+        <app-survey-template-option-form></app-survey-template-option-form>
+ </div>
+</sql-add-table>

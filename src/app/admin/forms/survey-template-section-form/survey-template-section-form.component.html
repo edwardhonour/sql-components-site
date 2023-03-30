@@ -1,0 +1,93 @@
+<!--
+id int(11)
+create_timestamp datetime
+template_id int(11)
+section_name varchar(90)
+section_order int(11)
+-->
+<sql-form
+ [id] = "'0'"
+ [id2] = "''"
+ [id3] = "''"
+ [table] = "'psp_template_option'"
+ [default_col] = "''"
+ [default_col2] = "''"
+ [default_col3] = "''"
+ [default_value] = "''"
+ [default_value2] = "''"
+ [default_value3] = "''"
+ [embedded] = "'Y'"
+ [card] = "'Y'"
+ [class] = "''"
+ [style] = "''"
+ [title] = "''"
+ [bs_row] = "'N'"
+ [bs_col] = "''"
+ [handler] = "'default'">
+ <div class="row"> 
+
+  <div class="col-sm-12 col-lg-6 col-xl-3"> 
+    <sql-data-select 
+    [appearance] = "'outline'"
+    [native] = "'Y'"
+    [sql] = "'select id, template_name from psp_template order by 2'"
+    [col] = "'template_id'"
+    [class] = "''"
+    [style] = "''"
+    [label] = "'Template ID'"
+    [placeholder] = "''"
+    [bs_row] = "'N'"
+    [bs_col] = "''"
+    [top_label] = "'N'">
+    </sql-data-select>
+  </div>
+  <!-- Center Column -->
+  <div class="col-sm-12 col-lg-6 col-xl-3"> 
+    <sql-input 
+     [col]= "'section_name'"
+     [class]="''"
+     [style] = "'width:400px;'"
+     [hint] = "''"
+     [label] = "'Section Name'"
+     [placeholder] = "''"
+     [appearance] = "'outline'"
+     [bs_row] = "'N'"
+     [bs_col] = "''"
+     [top_label] = "'N'">
+    </sql-input>
+  </div>
+  <!-- Right Column -->
+  <div class="col-sm-12 col-lg-6 col-xl-3"> 
+    <div class="row">
+        <div class="col-12">
+            <sql-input 
+            [col]= "'section_order'"
+            [class]="''"
+            [style] = "'width:200px;'"
+            [hint] = "''"
+            [label] = "'Section Order'"
+            [placeholder] = "''"
+            [appearance] = "'outline'"
+            [bs_row] = "'Y'"
+            [bs_col] = "'col-12'"
+            [top_label] = "'N'">
+           </sql-input>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <sql-submit 
+             [label] = "'Save Changes'"
+             [class] = "'btn btn-primary'"
+             [style] = "''">
+            </sql-submit>
+            <sql-delete 
+             [label] = "'Delete Record'"
+             [class] = "'btn btn-danger'"
+             [style] = "''">
+            </sql-delete>
+        </div>
+    </div>
+  </div>
+ </div>
+</sql-form>

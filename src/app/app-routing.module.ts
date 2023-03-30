@@ -2,6 +2,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { RouteParameterResolver } from 'sql-components';
 import { FacilitySaaTypePanelComponent } from './admin/panels/facility-saa-type-panel/facility-saa-type-panel.component';
+import { SurveyTemplateOptionPanelComponent } from './admin/panels/survey-template-option-panel/survey-template-option-panel.component';
+import { SurveyTemplatePanelComponent } from './admin/panels/survey-template-panel/survey-template-panel.component';
+import { SurveyTemplateSectionPanelComponent } from './admin/panels/survey-template-section-panel/survey-template-section-panel.component';
 import { ThreatTypePanelComponent } from './admin/panels/threat-type-panel/threat-type-panel.component';
 import { PreviewSectionComponent } from './admin/survey/pages/preview-section/preview-section.component';
 import { PreviewTemplateListComponent } from './admin/survey/pages/preview-template-list/preview-template-list.component';
@@ -28,6 +31,9 @@ import { TestPageComponent } from './pages/test-page/test-page.component';
 
 const routes: Routes = [
   { path: '', component: NewSigninComponent },
+  { path: 'survey-template-list', component: SurveyTemplatePanelComponent },
+  { path: 'survey-template-sections', component: SurveyTemplateSectionPanelComponent },
+  { path: 'survey-template-options', component: SurveyTemplateOptionPanelComponent },
   { path: 'test', component: TestPageComponent, resolve: { parameters: RouteParameterResolver } },
   { path: 'test/:id', component: TestPageComponent, resolve: { parameters: RouteParameterResolver } },
   { path: 'test/:id/:id2', component: TestPageComponent, resolve: { parameters: RouteParameterResolver } },

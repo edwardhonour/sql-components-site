@@ -1,0 +1,81 @@
+<!--
+id int(11)
+create_timestamp datetime
+template_name varchar(90)
+template_type varchar(30)
+asset_type varchar(30)
+visibility varchar(30)
+user_id int(11)
+sector varchar(60)
+-->
+<!--
+id int(11)
+create_timestamp datetime
+property_type varchar(80)
+-->
+<sql-form
+ [id] = "'0'"
+ [id2] = "''"
+ [id3] = "''"
+ [table] = "'psp_template'"
+ [default_col] = "''"
+ [default_col2] = "''"
+ [default_col3] = "''"
+ [default_value] = "''"
+ [default_value2] = "''"
+ [default_value3] = "''"
+ [embedded] = "'Y'"
+ [card] = "'Y'"
+ [class] = "''"
+ [style] = "''"
+ [title] = "''"
+ [bs_row] = "'N'"
+ [bs_col] = "''"
+ [handler] = "'default'">
+ <div class="row"> 
+  <!-- Left Column -->
+  <div class="col-sm-12 col-lg-6 col-xl-3"> 
+        <sql-input 
+         [col]= "'template_name'"
+         [class]="''"
+         [style] = "'width:400px;'"
+         [hint] = "''"
+         [label] = "'Template Name'"
+         [placeholder] = "''"
+         [appearance] = "'outline'"
+         [bs_row] = "'N'"
+         [bs_col] = "''"
+         [top_label] = "'N'">
+        </sql-input>
+  </div>
+  <!-- Center Column -->
+  <div class="col-sm-12 col-lg-6 col-xl-3"> 
+        <sql-data-select 
+        [appearance] = "'outline'"
+        [native] = "'Y'"
+        [sql] = "'select id, property_type from psp_property_type order by 2'"
+        [col] = "'sector'"
+        [class] = "''"
+        [style] = "''"
+        [label] = "'SAA Type'"
+        [placeholder] = "''"
+        [bs_row] = "'N'"
+        [bs_col] = "''"
+        [top_label] = "'N'">
+        </sql-data-select>
+  </div>
+  <!-- Right Column -->
+  <div class="col-sm-12 col-lg-6 col-xl-3"> 
+<sql-submit 
+ [label] = "'Save Changes'"
+ [class] = "'btn btn-primary'"
+ [style] = "''">
+</sql-submit>
+<sql-delete 
+ [label] = "'Delete Record'"
+ [class] = "'btn btn-danger'"
+ [style] = "''">
+</sql-delete>
+  </div>
+ </div>
+</sql-form>
