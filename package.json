@@ -36,11 +36,7 @@
     "ngx-editor": "^15.3.0",
     "ngx-table-pagination": "^1.1.5",
     "rxjs": "~7.5.0",
-<<<<<<< HEAD
     "sql-components": "^15.2.152",
-=======
-    "sql-components": "^15.2.144",
->>>>>>> 342522f198b32a8bc630364744c0522006646429
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },
