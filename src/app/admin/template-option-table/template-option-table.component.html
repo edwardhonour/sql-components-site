@@ -1,0 +1,24 @@
+
+
+
+<sql-add-table [title]="'template-option'"
+  [sql]="'select * from psp_template_option'">
+<th #column id="id">id</th>
+<th #column id="create_timestamp">create_timestamp</th>
+<th #column id="section_id">section_id</th>
+<th #column id="parent_id">parent_id</th>
+<th #column id="option_text">option_text</th>
+<th #column id="option_type">option_type</th>
+<th #column id="option_group">option_group</th>
+<th #column id="option_order">option_order</th>
+<th #column id="third_person_text">third_person_text</th>
+<th #column id="help_text">help_text</th>
+<th #column id="validation_text">validation_text</th>
+<th #column id="height">height</th>
+<th #column id="width">width</th>
+<th #column id="template_id">template_id</th>
+<th #column id="option_id">option_id</th>
+<div form>
+<app-template-option-form></app-template-option-form>
+</div>
+</sql-add-table>

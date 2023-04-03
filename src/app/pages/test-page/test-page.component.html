@@ -1,1 +1,21 @@
-<app-facility-saa-type-panel></app-facility-saa-type-panel>
+<sql-panel 
+     [sql]="'select * from psp_template where id = :id'"
+    [use_router]="'Y'"
+    [id] = "'0'"
+    [id2] = "'0'"
+    [id3] = "'0'"
+    [card] = "'Y'"
+    [closable] = "'N'"
+    [open] = "'Y'"
+    [class] = "''"
+    [style] = "''"
+    [title] = "''"
+    [bs_row] = "'N'"
+    [bs_col] = "''">
+<div header>
+    <h2>{{ data?.template_name }}</h2>
+</div>
+<div footer>
+    Not Header
+</div>
+</sql-panel>

@@ -28,7 +28,7 @@ import { TestPageComponent } from './pages/test-page/test-page.component';
 
 const routes: Routes = [
   { path: '', component: NewSigninComponent },
-  { path: 'test', component: TestPageComponent, resolve: { parameters: RouteParameterResolver } },
+  { path: 'test', component: TestPageComponent },
   { path: 'test/:id', component: TestPageComponent, resolve: { parameters: RouteParameterResolver } },
   { path: 'test/:id/:id2', component: TestPageComponent, resolve: { parameters: RouteParameterResolver } },
   { path: 'test/:id/:id2/:id3', component: TestPageComponent, resolve: { parameters: RouteParameterResolver } },

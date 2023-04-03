@@ -1,0 +1,61 @@
+<sql-form 
+ [table]="'psp_template_option'" [embedded]="'Y'"
+ [title]="'psp_template_option'"
+ [id]="'0'" [id2]="''" [id3]="''"
+ [default_col]= "''" [default_value]="''">
+
+  
+<div class="row">
+<div class="col-sm-12 col-lg-6 col-xl-4">
+  <sql-data-select  [col]="'section_id'" [style]="'width:400px;'" [label]="'section_id'" [sql]="'select id, name from sometable order by 2'">
+ </sql-data-select>
+ 
+  <sql-data-select  [col]="'parent_id'" [style]="'width:400px;'" [label]="'parent_id'" [sql]="'select id, name from sometable order by 2'">
+ </sql-data-select>
+ 
+  <sql-input  [col]="'option_text'" [style]="'width:400px;'" [label]="'option_text'">
+  </sql-input>
+
+  <sql-input  [col]="'option_type'" [style]="'width:400px;'" [label]="'option_type'">
+  </sql-input>
+
+  <sql-data-select  [col]="'option_group'" [style]="'width:400px;'" [label]="'option_group'" [sql]="'select id, name from sometable order by 2'">
+ </sql-data-select>
+ 
+</div>
+<div class="col-sm-12 col-lg-6 col-xl-4">
+  <sql-data-select  [col]="'option_order'" [style]="'width:400px;'" [label]="'option_order'" [sql]="'select id, name from sometable order by 2'">
+ </sql-data-select>
+ 
+  <sql-input  [col]="'third_person_text'" [style]="'width:400px;'" [label]="'third_person_text'">
+  </sql-input>
+
+  <sql-input  [col]="'help_text'" [style]="'width:400px;'" [label]="'help_text'">
+  </sql-input>
+
+  <sql-input  [col]="'validation_text'" [style]="'width:400px;'" [label]="'validation_text'">
+  </sql-input>
+
+  <sql-input  [col]="'height'" [style]="'width:400px;'" [label]="'height'">
+  </sql-input>
+
+</div>
+<div class="col-sm-12 col-lg-6 col-xl-4">
+  <sql-input  [col]="'width'" [style]="'width:400px;'" [label]="'width'">
+  </sql-input>
+
+  <sql-data-select  [col]="'template_id'" [style]="'width:400px;'" [label]="'template_id'" [sql]="'select id, name from sometable order by 2'">
+ </sql-data-select>
+ 
+  <sql-data-select  [col]="'option_id'" [style]="'width:400px;'" [label]="'option_id'" [sql]="'select id, name from sometable order by 2'">
+ </sql-data-select>
+ 
+<div class="row">
+<div class="col-sm-12">
+<sql-submit></sql-submit><sql-delete></sql-delete>
+</div>
+</div>
+</div>
+</div>
+</sql-form>
+

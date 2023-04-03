@@ -31,7 +31,7 @@ import { PageFooterComponent } from './template/page-footer/page-footer.componen
     PageFooterComponent
   ],
   providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy },
-  { provide: 'WEBSERVER', useValue: 'https://myna-api.com/api/'}],
+  { provide: 'WEBSERVER', useValue: 'https://protectivesecurity.org/api/'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

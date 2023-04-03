@@ -1,0 +1,9 @@
+<sql-add-table [title]="'saa-asset-type'"
+[sql]="'select * from psp_saa_asset_type'">
+<th #column id="id">id</th>
+<th #column id="create_timestamp">create_timestamp</th>
+<th #column id="asset_type">asset_type</th>
+<div form>
+<app-saa-asset-type-form></app-saa-asset-type-form>
+</div>
+</sql-add-table>
