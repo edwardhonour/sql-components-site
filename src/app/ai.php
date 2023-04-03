@@ -489,9 +489,18 @@ class SQLLabsAI {
 }
 
 $table=$_POST['table_name'];
-$table_name=$_GET['table_name'];
+$sql=$_POST['sql'];
+$selector=$_POST['selector'];
+$directory_name=$_POST['directory_name'];
+$class_name=$_POST['class_name'];
+$package=$_POST['package'];
 $A=new SQLLabsAI();
-$A->make_dashboard_set($table_name);
+
+if ($package=="add-table") $A->make_crud_set($table);
+if ($package=="query-table") $A->make_dashboard_set($table);
+
+
+//$A->make_dashboard_set($table_name);
 
 //$A->create_form_module_min();
 //$A->create_form_template_vert3_min();
