@@ -494,6 +494,7 @@ $selector=$_POST['selector'];
 $directory_name=$_POST['directory_name'];
 $class_name=$_POST['class_name'];
 $package=$_POST['package'];
+
 $A=new SQLLabsAI();
 
 if ($package=="add-table") $A->make_crud_set($table);
@@ -501,11 +502,11 @@ if ($package=="query-table") $A->make_dashboard_set($table);
 
 
 //$A->make_dashboard_set($table_name);
-
 //$A->create_form_module_min();
 //$A->create_form_template_vert3_min();
 //$A->create_table_module_min();
 //$A->create_table_template_min();
 //$A->send_zip();
 //echo "die";
+
 ?>

@@ -1,21 +1,19 @@
-<sql-panel 
-     [sql]="'select * from psp_template where id = :id'"
-    [use_router]="'Y'"
-    [id] = "'0'"
-    [id2] = "'0'"
-    [id3] = "'0'"
-    [card] = "'Y'"
-    [closable] = "'N'"
-    [open] = "'Y'"
-    [class] = "''"
-    [style] = "''"
-    [title] = "''"
-    [bs_row] = "'N'"
-    [bs_col] = "''">
-<div header>
-    <h2>{{ data?.template_name }}</h2>
-</div>
-<div footer>
-    Not Header
-</div>
-</sql-panel>
+<div class="row">
+    <div class="col-3">
+                <lib-sql-edit-preview
+                [sql]="'select * from psp_template_option'"
+            [use_parameters]="'N'"
+            [id] = "'0'"
+            [class] = "''"
+            [style] = "''"
+            [title] = "'This is the title'">
+            <th #row id="id">ID</th>
+            <th #row id="option_text">Label</th>
+            <th #row id="option_type">Option Type</th>
+            <th #row id="option_order">Option Order</th>
+            <div form>
+                Ths is the form...
+            </div>
+        </lib-sql-edit-preview>
+    </div>
+</div> 
