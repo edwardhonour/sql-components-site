@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { StakeholderContactListComponent } from 'src/app/features/stakeholder/panels/stakeholder-contact-list/stakeholder-contact-list.component';
 import { StakeholderContactFormComponent } from 'src/app/features/stakeholder/forms/stakeholder-contact-form/stakeholder-contact-form.component';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
-import { SqlDataPreview2Component, SqlDataPreview3Component, SqlDataPreviewComponent, SQLDataService, SqlEditPreviewComponent, SqlFormComponent, SqlInputComponent, SqlPanelComponent } from 'sql-components';
+import { SqlAddTableComponent, SqlDataPreview2Component, SqlDataPreview3Component, SqlDataPreviewComponent, SQLDataService, SqlEditPreviewComponent, SqlFormComponent, SqlInputComponent, SqlPanelComponent } from 'sql-components';
 import { ThreatTypeFormComponent } from 'src/app/admin/forms/threat-type-form/threat-type-form.component';
 import { ThreatTypePanelComponent } from 'src/app/admin/panels/threat-type-panel/threat-type-panel.component';
 import { FacilitySaaTypePanelComponent } from 'src/app/admin/panels/facility-saa-type-panel/facility-saa-type-panel.component';
@@ -14,7 +14,7 @@ import { TemplateOptionTableComponent } from 'src/app/admin/template-option-tabl
   selector: 'app-test-page',
   standalone: true,
   imports: [CommonModule, StakeholderContactListComponent, StakeholderContactFormComponent, SaaAssetTypeTableComponent,
-      RouterModule, ThreatTypeFormComponent, FacilitySaaTypePanelComponent, 
+      RouterModule, ThreatTypeFormComponent, FacilitySaaTypePanelComponent, SqlAddTableComponent,
       TemplateOptionTableComponent, SqlDataPreviewComponent, SqlDataPreview3Component,
       SqlDataPreview2Component, SqlEditPreviewComponent,
       ThreatTypePanelComponent,

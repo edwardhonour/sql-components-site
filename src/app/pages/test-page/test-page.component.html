@@ -1,19 +1,29 @@
-<div class="row">
-    <div class="col-3">
-                <lib-sql-edit-preview
-                [sql]="'select * from psp_template_option'"
-            [use_parameters]="'N'"
-            [id] = "'0'"
-            [class] = "''"
-            [style] = "''"
-            [title] = "'This is the title'">
-            <th #row id="id">ID</th>
-            <th #row id="option_text">Label</th>
-            <th #row id="option_type">Option Type</th>
-            <th #row id="option_order">Option Order</th>
-            <div form>
-                Ths is the form...
-            </div>
-        </lib-sql-edit-preview>
-    </div>
-</div> 
+<sql-add-table 
+ [title]="'No Title Defined'"
+ [sql]="'select id, template_name from psp_template'"
+ [card] = "'Y'"
+ [card_class] = "''"
+ [card_style] = "''"
+ [container_class] = "'container-fluid m-2 p-2'"
+ [container_style] = "''"
+ [search] = "'TOP'"
+ [bs_row] = "'N'"
+ [bs_col] = "''"
+ [table_class] = "'table table-striped table-condensed'"
+ [table_style] = "''"
+ [title] = "'Title Not Set'"
+ [pagination] = "'Y'"
+ [pagesize] = 25
+ [id] = "'0'"
+ [open] = "'Y'"
+ [edit] = "'N'"
+ [class] = "'table table-striped table-condensed'"
+ [style] = "''">
+ <th #column id="id">ID</th>
+ <th #column id="create_timestamp">Timestamp</th>
+ <th #column id="template_name">Column Three</th>
+ <button #column id="template_name">Dash</button>
+ <div form>
+        This is my form Component
+ </div>
+</sql-add-table>
